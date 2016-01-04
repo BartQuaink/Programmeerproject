@@ -4,7 +4,9 @@ Sinds dat Steph Curry terug is gekomen van zijn meerdere blessures zet hij allem
 
 Door middel van verschillende manieren van het representeren van data te gebruiken kunnen deze spelers tegen elkaar afgewogen worden. Denk hierbij aan scatterplots met het totaal aantal gemaakte 3FG (3 point field goals) per wedstrijd van een seizoen, linegraphs waarin het totale aantal 3 punters over de loop van een carriëre uitgezet worden of shotcharts van de 3FG% op een gebied op het veld. Door deze uit te zetten in een interactieve visualisatie kunnen deze spelers snel en gemakkelijk vergeleken worden. 
 
-![](doc/shotchart.jpeg)
+Het probleem wat dus opgelost gaat worden is een feitelijke conclusie geven aan wie nu precies in zijn looptijd de beste 3 punt schutter is. 
+
+![shotchart](doc/shotchart.jpeg)
 ![](doc/linegraph.jpeg)
 ![](doc/scatterplot.gif)
 
