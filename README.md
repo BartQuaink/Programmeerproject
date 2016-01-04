@@ -10,8 +10,10 @@ Het probleem wat dus opgelost gaat worden is een feitelijke conclusie geven aan 
 
 Een shotchart, een groen vinkje staat voor een gemaakt schot en een rood kruisje voor een gemiste poging.
 ![shotchart](doc/shotchart.jpg)
+
 Een linegraph.
 ![linegraph](doc/linegraph.jpg)
+
 Een scatterplot.
 ![scatterplot](doc/scatterplot.gif)
 
@@ -33,5 +35,8 @@ Bij het visualizeren van de data zal gebruik gemaakt worden van de D3 javascript
 
 Tijdens het creëeren en gebruik van deze visualizaties kunnen enkele problemen voorkomen. Ten eerste tijdens de creatie. Uit ervaring met het werken van D3 kan ik zeggen dat het lastig is precies het gewenste resultaat te krijgen, de interactiviteit kan wegens simpele fouten niet optimaal werken. Het visualizeren moet volgens bepaalde standaarden zijn, veel tijdens Data Processing geleerd. Natuurlijk is het vaak een mening over wat precies de optimale manier is om een boodschap over te brengen, niet iedereen heeft hier het beste oog voor, inclusief ik. Door middel van de kritiek momenten kan dit probleem verholpen worden, veel mensen die een oog op een visualizatie hebben helpt hier de optimale manier van design voor te kiezen.
 
-Ten tweede, het gebruik van de webpagina.
+Ten tweede, het gebruik van de webpagina. De gebruiker kan enkele problemen tegemoetkomen. Zo kan de interactie niet optimaal werken, kunnen enkele delen van de pagina niet goed verschijnen of nog erger, de gebruiker kan niet duidelijk de relatie tussen de visualizaties concluderen. De grafieken moeten in goed verband met elkaar staan en de gebruiker moet direct weten waar de grafieken over gaan en wat precies de boodschap is. Als alle visualizaties werken is het dus van belang een duidelijke toelichting te schrijven en de grafieken in een logische volgorde te plaatsen. De interactie tussen de grafieken moet duidelijk zijn, niet alleen hoe het werkt maar ook waarom er precies een interactie is.
+
+# 7- Vergelijkbare projecten
+
 
