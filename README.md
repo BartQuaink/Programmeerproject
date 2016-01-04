@@ -39,4 +39,11 @@ Ten tweede, het gebruik van de webpagina. De gebruiker kan enkele problemen tege
 
 # 7- Vergelijkbare projecten
 
+Er zijn niet veel vergelijkbare projecten, doordat er zoveel data te vinden is in de NBA zijn er ontzettend veel verschillende visualizaties te vinden, en daardoor ook veel verschillende. Hier zijn wel enkele die het idee redelijk overbrengen.
 
+http://asbcllc.com/blog/2014/november/big_data_exploration_in_r/unscaled/
+
+https://i.imgur.com/MxXTCr4.jpg
+
+En de zeer uitgebreide, prachtige
+http://peterbeshai.com/buckets/app/#/playerView/201935_2015
