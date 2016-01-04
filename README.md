@@ -8,8 +8,11 @@ Door middel van verschillende manieren van het representeren van data te gebruik
 
 Het probleem wat dus opgelost gaat worden is een feitelijke conclusie geven aan wie nu precies in zijn looptijd de beste 3-punt schutter is. 
 
+Een shotchart, een groen vinkje staat voor een gemaakt schot en een rood kruisje voor een gemiste poging.
 ![shotchart](doc/shotchart.jpg)
+Een linegraph.
 ![linegraph](doc/linegraph.jpg)
+Een scatterplot.
 ![scatterplot](doc/scatterplot.gif)
 
 # 2 - Schets webpagina
