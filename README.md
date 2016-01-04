@@ -19,6 +19,9 @@ Een scatterplot.
 
 # 2 - Schets webpagina
 
+Een schets van hoe de webpagina er uit zal komen te zien.
+![webpage](doc/schets.png)
+
 # 3 - Data sets
 
 Via www.basketball-reference.com zijn alle statistieken te vinden over al deze schutters. De data is te downloaden in verschillende data formaten, ik zal voor csv kiezen en hiervan gebruik maken. Via een python script zal deze data omgezet worden naar een JSON bestand, waardoor ik de data interactief kan maken via javascript en HTML.
