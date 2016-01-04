@@ -8,8 +8,8 @@ Door middel van verschillende manieren van het representeren van data te gebruik
 
 Het probleem wat dus opgelost gaat worden is een feitelijke conclusie geven aan wie nu precies in zijn looptijd de beste 3-punt schutter is. 
 
-![shotchart](doc/shotchart.jpeg)
-![linegraph](doc/linegraph.jpeg)
+![shotchart](doc/shotchart.jpg)
+![linegraph](doc/linegraph.jpg)
 ![scatterplot](doc/scatterplot.gif)
 
 # 2 - Schets webpagina
@@ -25,4 +25,10 @@ De onderdelen van deze visualizatie kunnen apart bekeken worden, de scatterplots
 # 5 - Programma's
 
 Bij het visualizeren van de data zal gebruik gemaakt worden van de D3 javascript library. Door middel van D3 kan er de gewenste interactiviteit gecreëerd worden. Het opschonen van de site over het algemeen zal via CSS gedaan worden. Zo zal er een toelichting bij elke speler gegeven worden. Echter, de visualizaties zullen alleen met D3 en javascript gemaakt worden.
+
+# 6 - Problemen
+
+Tijdens het creëeren en gebruik van deze visualizaties kunnen enkele problemen voorkomen. Ten eerste tijdens de creatie. Uit ervaring met het werken van D3 kan ik zeggen dat het lastig is precies het gewenste resultaat te krijgen, de interactiviteit kan wegens simpele fouten niet optimaal werken. Het visualizeren moet volgens bepaalde standaarden zijn, veel tijdens Data Processing geleerd. Natuurlijk is het vaak een mening over wat precies de optimale manier is om een boodschap over te brengen, niet iedereen heeft hier het beste oog voor, inclusief ik. Door middel van de kritiek momenten kan dit probleem verholpen worden, veel mensen die een oog op een visualizatie hebben helpt hier de optimale manier van design voor te kiezen.
+
+Ten tweede, het gebruik van de webpagina.
 
