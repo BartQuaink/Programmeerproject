@@ -1,5 +1,7 @@
  // scraping NBA player information tutorial from http://www.gregreda.com/2015/02/15/web-scraping-finding-the-api/
 
+ //testing with steph curry - 201939
+
 var request = require('request');
 var dl = require('datalib');
 var d3 = require('d3');
@@ -40,10 +42,10 @@ request.get(shots_url, function(err, res, body){
     var coll = d3.nest()
         .key(function(d) {return [d.x, d.y]; })
         .rollup(function(v) {return{
-            made: d3.sum(v, function(d) {return d.made}),
-            attempts: d3.sum(v, function(d){return d.attempts}),
-            shootingPercentage:  d3.sum(v, function(d) {return d.made})/d3.sum(v, function(d){return d.attempts})
-        }})
+            made: d3.sum(v, function(d) {return d.made;}),
+            attempts: d3.sum(v, function(d){return d.attempts;}),
+            shootingPercentage:  d3.sum(v, function(d) {return d.made;})/d3.sum(v, function(d){return d.attempts;})
+        };})
         .entries(tenderData);
     console.log("2");
 
@@ -60,6 +62,7 @@ request.get(shots_url, function(err, res, body){
 
       coll.forEach(function(a){
           var k = (a.values.shootingPercentage - meanShot)/shotSTDV;
-          finalData.push({"x": a.key[0], "y": a.key[1], "z": k, "made": a.values.made, "attempts": a.values.attempts})
+          finalData.push({"x": a.key[0], "y": a.key[1], "z": k, "made": a.values.made, "attempts": a.values.attempts});
       });
+      console.log(finalData);
 });
