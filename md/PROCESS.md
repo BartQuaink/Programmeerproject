@@ -24,3 +24,7 @@
 # Day 6
 * Started working on scatterplot
 * Trying to fix the shotchart issue, try to implement different bootstrap templates
+
+# Day 7
+
+# Day 8

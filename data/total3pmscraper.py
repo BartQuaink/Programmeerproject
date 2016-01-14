@@ -16,12 +16,13 @@ players = ["3975/stephen-curry", "9/ray-allen", "552/reggie-miller", "841/jason-
 
 htmllink = "http://espn.go.com/nba/player/stats/_/id/"
 
-output_file = open('3pointers.json', 'w')
+output_file = open('new3pointers.json', 'w')
 
 for player in players:
     TARGET_URL = URL(htmllink + player)
     dom = DOM(TARGET_URL.download(cached=True))
-    dataofyear = dict()
+    dataofyear = list()
+    tempdata= dict()
 
     print player
 
@@ -39,7 +40,12 @@ for player in players:
 
                     percentage = float(oddrow[5].content)
                     # dataofyear["year" + str(year)] = [madeshots, percentage]
-                    dataofyear[year] = [madeshots, percentage]
+                    tempdata["year"] = year
+                    tempdata["tot3fg"] = madeshots
+                    tempdata["percentage"] = percentage
+
+                    dataofyear.append(tempdata)
+                    tempdata = {}
 
                 year = 0
                 for evenrow in tablehead.by_class("evenrow"):
@@ -52,10 +58,16 @@ for player in players:
 
                     percentage = float(evenrow[5].content)
                     # dataofyear["year" + str(year)] = [madeshots, percentage]
-                    dataofyear[year] = [madeshots, percentage]
+                    tempdata["year"] = year
+                    tempdata["tot3fg"] = madeshots
+                    tempdata["percentage"] = percentage
+
+                    dataofyear.append(tempdata)
+                    tempdata = {}
 
     playerlist[re.sub("[^a-zA-Z]+", "", player)] = dataofyear
-    dataofyear = {}
+    dataofyear = []
+
 
 json.dump(playerlist, output_file, indent = 4)
 output_file.write('\n')
