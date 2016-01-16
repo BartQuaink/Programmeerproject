@@ -1,3 +1,24 @@
+// CREATE SORTING FUNCTION TODO /////////////////////
+// var bla = players[0];
+//
+// var bloo = bla.Data;
+// console.log(bloo);
+//
+// bloo.sort(function (a, b) {
+//   return d3.ascending(a.year, b.year);
+// });
+//////////////////////////////////////////////
+console.log(data);
+players = [];
+
+for (var i in data) {
+  sorted = data[i].Data.sort(function (a, b) {
+    return d3.ascending(a.year, b.year);
+  });
+  players.append(sorted);
+}
+
+
 var data = [
     {
         "City": "New York",
@@ -157,3 +178,1265 @@ city.append("text")
     .text(function (d) {
         return d.name;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "player" : "joejohnson",
+  "Data": [
+      {
+          "percentage": "0.273",
+          "tot3fg": "24",
+          "year": "1"
+      },
+      {
+          "percentage": "0.366",
+          "tot3fg": "75",
+          "year": "3"
+      },
+      {
+          "percentage": "0.478",
+          "tot3fg": "177",
+          "year": "5"
+      },
+      {
+          "percentage": "0.381",
+          "tot3fg": "119",
+          "year": "7"
+      },
+      {
+          "percentage": "0.36",
+          "tot3fg": "149",
+          "year": "9"
+      },
+      {
+          "percentage": "0.297",
+          "tot3fg": "89",
+          "year": "11"
+      },
+      {
+          "percentage": "0.375",
+          "tot3fg": "148",
+          "year": "13"
+      },
+      {
+          "percentage": "0.359",
+          "tot3fg": "121",
+          "year": "15"
+      },
+      {
+          "percentage": "0.333",
+          "tot3fg": "14",
+          "year": "2"
+      },
+      {
+          "percentage": "0.305",
+          "tot3fg": "83",
+          "year": "4"
+      },
+      {
+          "percentage": "0.356",
+          "tot3fg": "128",
+          "year": "6"
+      },
+      {
+          "percentage": "0.381",
+          "tot3fg": "169",
+          "year": "8"
+      },
+      {
+          "percentage": "0.369",
+          "tot3fg": "129",
+          "year": "10"
+      },
+      {
+          "percentage": "0.388",
+          "tot3fg": "125",
+          "year": "12"
+      },
+      {
+          "percentage": "0.401",
+          "tot3fg": "162",
+          "year": "14"
+      },
+      {
+          "percentage": "0.31",
+          "tot3fg": "44",
+          "year": "16"
+      }
+  ],
+  "player" : "chaunceybillups",
+  "Data" : [
+      {
+          "percentage": "0.339",
+          "tot3fg": "64",
+          "year": "1"
+      },
+      {
+          "percentage": "0.362",
+          "tot3fg": "85",
+          "year": "3"
+      },
+      {
+          "percentage": "0.376",
+          "tot3fg": "73",
+          "year": "5"
+      },
+      {
+          "percentage": "0.392",
+          "tot3fg": "149",
+          "year": "7"
+      },
+      {
+          "percentage": "0.426",
+          "tot3fg": "165",
+          "year": "9"
+      },
+      {
+          "percentage": "0.345",
+          "tot3fg": "109",
+          "year": "11"
+      },
+      {
+          "percentage": "0.41",
+          "tot3fg": "160",
+          "year": "13"
+      },
+      {
+          "percentage": "0.386",
+          "tot3fg": "157",
+          "year": "15"
+      },
+      {
+          "percentage": "0.328",
+          "tot3fg": "41",
+          "year": "17"
+      },
+      {
+          "percentage": "0.367",
+          "tot3fg": "33",
+          "year": "19"
+      },
+      {
+          "percentage": "0.316",
+          "tot3fg": "43",
+          "year": "2"
+      },
+      {
+          "percentage": "0.171",
+          "tot3fg": "74",
+          "year": "4"
+      },
+      {
+          "percentage": "0.394",
+          "tot3fg": "124",
+          "year": "6"
+      },
+      {
+          "percentage": "0.388",
+          "tot3fg": "130",
+          "year": "8"
+      },
+      {
+          "percentage": "0.433",
+          "tot3fg": "184",
+          "year": "10"
+      },
+      {
+          "percentage": "0.401",
+          "tot3fg": "137",
+          "year": "12"
+      },
+      {
+          "percentage": "0.286",
+          "tot3fg": "27",
+          "year": "14"
+      },
+      {
+          "percentage": "0.441",
+          "tot3fg": "105",
+          "year": "16"
+      },
+      {
+          "percentage": "0.384",
+          "tot3fg": "48",
+          "year": "18"
+      },
+      {
+          "percentage": "0.292",
+          "tot3fg": "14",
+          "year": "20"
+      }
+  ],
+  "player" : "jamalcrawford",
+  "Data": [
+      {
+          "percentage": "0.35",
+          "tot3fg": "41",
+          "year": "1"
+      },
+      {
+          "percentage": "0.355",
+          "tot3fg": "86",
+          "year": "3"
+      },
+      {
+          "percentage": "0.361",
+          "tot3fg": "185",
+          "year": "5"
+      },
+      {
+          "percentage": "0.32",
+          "tot3fg": "103",
+          "year": "7"
+      },
+      {
+          "percentage": "0.338",
+          "tot3fg": "107",
+          "year": "9"
+      },
+      {
+          "percentage": "0.382",
+          "tot3fg": "163",
+          "year": "11"
+      },
+      {
+          "percentage": "0.308",
+          "tot3fg": "80",
+          "year": "13"
+      },
+      {
+          "percentage": "0.361",
+          "tot3fg": "161",
+          "year": "15"
+      },
+      {
+          "percentage": "0.316",
+          "tot3fg": "42",
+          "year": "17"
+      },
+      {
+          "percentage": "0.448",
+          "tot3fg": "26",
+          "year": "2"
+      },
+      {
+          "percentage": "0.317",
+          "tot3fg": "165",
+          "year": "4"
+      },
+      {
+          "percentage": "0.345",
+          "tot3fg": "101",
+          "year": "6"
+      },
+      {
+          "percentage": "0.356",
+          "tot3fg": "176",
+          "year": "8"
+      },
+      {
+          "percentage": "0.455",
+          "tot3fg": "35",
+          "year": "10"
+      },
+      {
+          "percentage": "0.341",
+          "tot3fg": "119",
+          "year": "12"
+      },
+      {
+          "percentage": "0.376",
+          "tot3fg": "149",
+          "year": "14"
+      },
+      {
+          "percentage": "0.327",
+          "tot3fg": "119",
+          "year": "16"
+      }
+  ],
+  "player" : "rashardlewis",
+  "Data" : [
+      {
+          "percentage": "0.167",
+          "tot3fg": "16",
+          "year": "1"
+      },
+      {
+          "percentage": "0.432",
+          "tot3fg": "123",
+          "year": "3"
+      },
+      {
+          "percentage": "0.346",
+          "tot3fg": "75",
+          "year": "5"
+      },
+      {
+          "percentage": "0.4",
+          "tot3fg": "173",
+          "year": "7"
+      },
+      {
+          "percentage": "0.39",
+          "tot3fg": "151",
+          "year": "9"
+      },
+      {
+          "percentage": "0.397",
+          "tot3fg": "220",
+          "year": "11"
+      },
+      {
+          "percentage": "0.367",
+          "tot3fg": "44",
+          "year": "13"
+      },
+      {
+          "percentage": "0.239",
+          "tot3fg": "16",
+          "year": "15"
+      },
+      {
+          "percentage": "0.343",
+          "tot3fg": "46",
+          "year": "17"
+      },
+      {
+          "percentage": "0.333",
+          "tot3fg": "40",
+          "year": "2"
+      },
+      {
+          "percentage": "0.389",
+          "tot3fg": "123",
+          "year": "4"
+      },
+      {
+          "percentage": "0.376",
+          "tot3fg": "145",
+          "year": "6"
+      },
+      {
+          "percentage": "0.384",
+          "tot3fg": "142",
+          "year": "8"
+      },
+      {
+          "percentage": "0.409",
+          "tot3fg": "226",
+          "year": "10"
+      },
+      {
+          "percentage": "0.397",
+          "tot3fg": "168",
+          "year": "12"
+      },
+      {
+          "percentage": "0.347",
+          "tot3fg": "43",
+          "year": "14"
+      },
+      {
+          "percentage": "0.389",
+          "tot3fg": "51",
+          "year": "16"
+      }
+  ],
+  "player" : "kylekorver",
+  "Data": [
+      {
+          "percentage": "0.391",
+          "tot3fg": "81",
+          "year": "1"
+      },
+      {
+          "percentage": "0.42",
+          "tot3fg": "184",
+          "year": "3"
+      },
+      {
+          "percentage": "0.352",
+          "tot3fg": "38",
+          "year": "5"
+      },
+      {
+          "percentage": "0.386",
+          "tot3fg": "103",
+          "year": "7"
+      },
+      {
+          "percentage": "0.415",
+          "tot3fg": "120",
+          "year": "9"
+      },
+      {
+          "percentage": "0.457",
+          "tot3fg": "189",
+          "year": "11"
+      },
+      {
+          "percentage": "0.492",
+          "tot3fg": "221",
+          "year": "13"
+      },
+      {
+          "percentage": "0.405",
+          "tot3fg": "226",
+          "year": "2"
+      },
+      {
+          "percentage": "0.43",
+          "tot3fg": "132",
+          "year": "4"
+      },
+      {
+          "percentage": "0.388",
+          "tot3fg": "73",
+          "year": "6"
+      },
+      {
+          "percentage": "0.536",
+          "tot3fg": "59",
+          "year": "8"
+      },
+      {
+          "percentage": "0.435",
+          "tot3fg": "118",
+          "year": "10"
+      },
+      {
+          "percentage": "0.472",
+          "tot3fg": "185",
+          "year": "12"
+      },
+      {
+          "percentage": "0.356",
+          "tot3fg": "63",
+          "year": "14"
+      }
+  ],
+  "player" : "pejastojakovic",
+  "Data": [
+      {
+          "percentage": "0.32",
+          "tot3fg": "57",
+          "year": "1"
+      },
+      {
+          "percentage": "0.4",
+          "tot3fg": "144",
+          "year": "3"
+      },
+      {
+          "percentage": "0.382",
+          "tot3fg": "155",
+          "year": "5"
+      },
+      {
+          "percentage": "0.402",
+          "tot3fg": "174",
+          "year": "7"
+      },
+      {
+          "percentage": "0.397",
+          "tot3fg": "71",
+          "year": "9"
+      },
+      {
+          "percentage": "0.441",
+          "tot3fg": "231",
+          "year": "11"
+      },
+      {
+          "percentage": "0.375",
+          "tot3fg": "132",
+          "year": "13"
+      },
+      {
+          "percentage": "0.4",
+          "tot3fg": "42",
+          "year": "15"
+      },
+      {
+          "percentage": "0.375",
+          "tot3fg": "100",
+          "year": "2"
+      },
+      {
+          "percentage": "0.416",
+          "tot3fg": "129",
+          "year": "4"
+      },
+      {
+          "percentage": "0.433",
+          "tot3fg": "240",
+          "year": "6"
+      },
+      {
+          "percentage": "0.404",
+          "tot3fg": "91",
+          "year": "8"
+      },
+      {
+          "percentage": "0.405",
+          "tot3fg": "34",
+          "year": "10"
+      },
+      {
+          "percentage": "0.378",
+          "tot3fg": "145",
+          "year": "12"
+      },
+      {
+          "percentage": "0.44",
+          "tot3fg": "11",
+          "year": "14"
+      },
+      {
+          "percentage": "0.667",
+          "tot3fg": "46",
+          "year": "16"
+      }
+  ],
+  "player" : "rayallen",
+  "Data": [
+      {
+          "percentage": "0.393",
+          "tot3fg": "117",
+          "year": "1"
+      },
+      {
+          "percentage": "0.356",
+          "tot3fg": "74",
+          "year": "3"
+      },
+      {
+          "percentage": "0.433",
+          "tot3fg": "202",
+          "year": "5"
+      },
+      {
+          "percentage": "0.395",
+          "tot3fg": "123",
+          "year": "7"
+      },
+      {
+          "percentage": "0.392",
+          "tot3fg": "148",
+          "year": "9"
+      },
+      {
+          "percentage": "0.412",
+          "tot3fg": "269",
+          "year": "11"
+      },
+      {
+          "percentage": "0.398",
+          "tot3fg": "180",
+          "year": "13"
+      },
+      {
+          "percentage": "0.363",
+          "tot3fg": "145",
+          "year": "15"
+      },
+      {
+          "percentage": "0.453",
+          "tot3fg": "106",
+          "year": "17"
+      },
+      {
+          "percentage": "0.375",
+          "tot3fg": "116",
+          "year": "19"
+      },
+      {
+          "percentage": "0.364",
+          "tot3fg": "134",
+          "year": "2"
+      },
+      {
+          "percentage": "0.423",
+          "tot3fg": "172",
+          "year": "4"
+      },
+      {
+          "percentage": "0.434",
+          "tot3fg": "229",
+          "year": "6"
+      },
+      {
+          "percentage": "0.351",
+          "tot3fg": "78",
+          "year": "8"
+      },
+      {
+          "percentage": "0.376",
+          "tot3fg": "209",
+          "year": "10"
+      },
+      {
+          "percentage": "0.372",
+          "tot3fg": "165",
+          "year": "12"
+      },
+      {
+          "percentage": "0.409",
+          "tot3fg": "199",
+          "year": "14"
+      },
+      {
+          "percentage": "0.444",
+          "tot3fg": "168",
+          "year": "16"
+      },
+      {
+          "percentage": "0.419",
+          "tot3fg": "139",
+          "year": "18"
+      }
+  ],
+  "player" : "paulpierce",
+  "Data": [
+      {
+          "percentage": "0.412",
+          "tot3fg": "84",
+          "year": "1"
+      },
+      {
+          "percentage": "0.383",
+          "tot3fg": "147",
+          "year": "3"
+      },
+      {
+          "percentage": "0.302",
+          "tot3fg": "118",
+          "year": "5"
+      },
+      {
+          "percentage": "0.37",
+          "tot3fg": "108",
+          "year": "7"
+      },
+      {
+          "percentage": "0.389",
+          "tot3fg": "107",
+          "year": "9"
+      },
+      {
+          "percentage": "0.391",
+          "tot3fg": "119",
+          "year": "11"
+      },
+      {
+          "percentage": "0.374",
+          "tot3fg": "111",
+          "year": "13"
+      },
+      {
+          "percentage": "0.38",
+          "tot3fg": "145",
+          "year": "15"
+      },
+      {
+          "percentage": "0.389",
+          "tot3fg": "118",
+          "year": "17"
+      },
+      {
+          "percentage": "0.343",
+          "tot3fg": "96",
+          "year": "2"
+      },
+      {
+          "percentage": "0.404",
+          "tot3fg": "210",
+          "year": "4"
+      },
+      {
+          "percentage": "0.299",
+          "tot3fg": "115",
+          "year": "6"
+      },
+      {
+          "percentage": "0.354",
+          "tot3fg": "111",
+          "year": "8"
+      },
+      {
+          "percentage": "0.392",
+          "tot3fg": "143",
+          "year": "10"
+      },
+      {
+          "percentage": "0.414",
+          "tot3fg": "109",
+          "year": "12"
+      },
+      {
+          "percentage": "0.366",
+          "tot3fg": "100",
+          "year": "14"
+      },
+      {
+          "percentage": "0.373",
+          "tot3fg": "112",
+          "year": "16"
+      },
+      {
+          "percentage": "0.33",
+          "tot3fg": "34",
+          "year": "18"
+      }
+  ],
+  "player" : "jasonkidd",
+  "Data" : [
+      {
+          "percentage": "0.272",
+          "tot3fg": "70",
+          "year": "1"
+      },
+      {
+          "percentage": "0.323",
+          "tot3fg": "21",
+          "year": "3"
+      },
+      {
+          "percentage": "0.313",
+          "tot3fg": "73",
+          "year": "5"
+      },
+      {
+          "percentage": "0.337",
+          "tot3fg": "56",
+          "year": "7"
+      },
+      {
+          "percentage": "0.321",
+          "tot3fg": "117",
+          "year": "9"
+      },
+      {
+          "percentage": "0.321",
+          "tot3fg": "94",
+          "year": "11"
+      },
+      {
+          "percentage": "0.352",
+          "tot3fg": "139",
+          "year": "13"
+      },
+      {
+          "percentage": "0.461",
+          "tot3fg": "35",
+          "year": "15"
+      },
+      {
+          "percentage": "0.406",
+          "tot3fg": "131",
+          "year": "17"
+      },
+      {
+          "percentage": "0.34",
+          "tot3fg": "133",
+          "year": "19"
+      },
+      {
+          "percentage": "0.351",
+          "tot3fg": "114",
+          "year": "21"
+      },
+      {
+          "percentage": "0.336",
+          "tot3fg": "133",
+          "year": "2"
+      },
+      {
+          "percentage": "0.4",
+          "tot3fg": "40",
+          "year": "4"
+      },
+      {
+          "percentage": "0.366",
+          "tot3fg": "45",
+          "year": "6"
+      },
+      {
+          "percentage": "0.297",
+          "tot3fg": "69",
+          "year": "8"
+      },
+      {
+          "percentage": "0.341",
+          "tot3fg": "126",
+          "year": "10"
+      },
+      {
+          "percentage": "0.36",
+          "tot3fg": "129",
+          "year": "12"
+      },
+      {
+          "percentage": "0.343",
+          "tot3fg": "124",
+          "year": "14"
+      },
+      {
+          "percentage": "0.356",
+          "tot3fg": "84",
+          "year": "16"
+      },
+      {
+          "percentage": "0.425",
+          "tot3fg": "176",
+          "year": "18"
+      },
+      {
+          "percentage": "0.354",
+          "tot3fg": "79",
+          "year": "20"
+      }
+  ],
+  "player" : "kobebryant",
+  "Data" : [
+      {
+          "percentage": "0.375",
+          "tot3fg": "51",
+          "year": "1"
+      },
+      {
+          "percentage": "0.267",
+          "tot3fg": "27",
+          "year": "3"
+      },
+      {
+          "percentage": "0.305",
+          "tot3fg": "61",
+          "year": "5"
+      },
+      {
+          "percentage": "0.383",
+          "tot3fg": "124",
+          "year": "7"
+      },
+      {
+          "percentage": "0.339",
+          "tot3fg": "131",
+          "year": "9"
+      },
+      {
+          "percentage": "0.344",
+          "tot3fg": "137",
+          "year": "11"
+      },
+      {
+          "percentage": "0.351",
+          "tot3fg": "118",
+          "year": "13"
+      },
+      {
+          "percentage": "0.323",
+          "tot3fg": "115",
+          "year": "15"
+      },
+      {
+          "percentage": "0.324",
+          "tot3fg": "132",
+          "year": "17"
+      },
+      {
+          "percentage": "0.293",
+          "tot3fg": "54",
+          "year": "19"
+      },
+      {
+          "percentage": "0.341",
+          "tot3fg": "75",
+          "year": "2"
+      },
+      {
+          "percentage": "0.319",
+          "tot3fg": "46",
+          "year": "4"
+      },
+      {
+          "percentage": "0.25",
+          "tot3fg": "33",
+          "year": "6"
+      },
+      {
+          "percentage": "0.327",
+          "tot3fg": "71",
+          "year": "8"
+      },
+      {
+          "percentage": "0.347",
+          "tot3fg": "180",
+          "year": "10"
+      },
+      {
+          "percentage": "0.361",
+          "tot3fg": "150",
+          "year": "12"
+      },
+      {
+          "percentage": "0.329",
+          "tot3fg": "99",
+          "year": "14"
+      },
+      {
+          "percentage": "0.303",
+          "tot3fg": "87",
+          "year": "16"
+      },
+      {
+          "percentage": "0.188",
+          "tot3fg": "31",
+          "year": "18"
+      },
+      {
+          "percentage": "0.259",
+          "tot3fg": "55",
+          "year": "20"
+      }
+  ],
+  "player" : "reggiemiller",
+  "Data" : [
+      {
+          "percentage": "0.355",
+          "tot3fg": "61",
+          "year": "1"
+      },
+      {
+          "percentage": "0.414",
+          "tot3fg": "150",
+          "year": "3"
+      },
+      {
+          "percentage": "0.378",
+          "tot3fg": "129",
+          "year": "5"
+      },
+      {
+          "percentage": "0.421",
+          "tot3fg": "123",
+          "year": "7"
+      },
+      {
+          "percentage": "0.41",
+          "tot3fg": "168",
+          "year": "9"
+      },
+      {
+          "percentage": "0.429",
+          "tot3fg": "164",
+          "year": "11"
+      },
+      {
+          "percentage": "0.408",
+          "tot3fg": "165",
+          "year": "13"
+      },
+      {
+          "percentage": "0.406",
+          "tot3fg": "180",
+          "year": "15"
+      },
+      {
+          "percentage": "0.401",
+          "tot3fg": "134",
+          "year": "17"
+      },
+      {
+          "percentage": "0.402",
+          "tot3fg": "98",
+          "year": "2"
+      },
+      {
+          "percentage": "0.348",
+          "tot3fg": "112",
+          "year": "4"
+      },
+      {
+          "percentage": "0.399",
+          "tot3fg": "167",
+          "year": "6"
+      },
+      {
+          "percentage": "0.415",
+          "tot3fg": "195",
+          "year": "8"
+      },
+      {
+          "percentage": "0.427",
+          "tot3fg": "229",
+          "year": "10"
+      },
+      {
+          "percentage": "0.385",
+          "tot3fg": "106",
+          "year": "12"
+      },
+      {
+          "percentage": "0.366",
+          "tot3fg": "170",
+          "year": "14"
+      },
+      {
+          "percentage": "0.355",
+          "tot3fg": "113",
+          "year": "16"
+      },
+      {
+          "percentage": "0.322",
+          "tot3fg": "96",
+          "year": "18"
+      }
+  ],
+  "player" : "stephencurry",
+  "Data": [
+      {
+          "percentage": "0.437",
+          "tot3fg": "166",
+          "year": "1"
+      },
+      {
+          "percentage": "0.455",
+          "tot3fg": "55",
+          "year": "3"
+      },
+      {
+          "percentage": "0.424",
+          "tot3fg": "261",
+          "year": "5"
+      },
+      {
+          "percentage": "0.445",
+          "tot3fg": "150",
+          "year": "7"
+      },
+      {
+          "percentage": "0.442",
+          "tot3fg": "151",
+          "year": "2"
+      },
+      {
+          "percentage": "0.453",
+          "tot3fg": "272",
+          "year": "4"
+      },
+      {
+          "percentage": "0.443",
+          "tot3fg": "286",
+          "year": "6"
+      }
+  ],
+  "player" : "vincecarter",
+  "Data" : [
+      {
+          "percentage": "0.288",
+          "tot3fg": "19",
+          "year": "1"
+      },
+      {
+          "percentage": "0.408",
+          "tot3fg": "162",
+          "year": "3"
+      },
+      {
+          "percentage": "0.344",
+          "tot3fg": "45",
+          "year": "5"
+      },
+      {
+          "percentage": "0.425",
+          "tot3fg": "108",
+          "year": "7"
+      },
+      {
+          "percentage": "0.341",
+          "tot3fg": "125",
+          "year": "9"
+      },
+      {
+          "percentage": "0.359",
+          "tot3fg": "98",
+          "year": "11"
+      },
+      {
+          "percentage": "0.367",
+          "tot3fg": "119",
+          "year": "13"
+      },
+      {
+          "percentage": "0.366",
+          "tot3fg": "89",
+          "year": "15"
+      },
+      {
+          "percentage": "0.406",
+          "tot3fg": "162",
+          "year": "17"
+      },
+      {
+          "percentage": "0.297",
+          "tot3fg": "69",
+          "year": "19"
+      },
+      {
+          "percentage": "0.403",
+          "tot3fg": "95",
+          "year": "2"
+      },
+      {
+          "percentage": "0.387",
+          "tot3fg": "121",
+          "year": "4"
+      },
+      {
+          "percentage": "0.383",
+          "tot3fg": "93",
+          "year": "6"
+      },
+      {
+          "percentage": "0.322",
+          "tot3fg": "19",
+          "year": "8"
+      },
+      {
+          "percentage": "0.357",
+          "tot3fg": "156",
+          "year": "10"
+      },
+      {
+          "percentage": "0.385",
+          "tot3fg": "151",
+          "year": "12"
+      },
+      {
+          "percentage": "0.346",
+          "tot3fg": "27",
+          "year": "14"
+      },
+      {
+          "percentage": "0.361",
+          "tot3fg": "74",
+          "year": "16"
+      },
+      {
+          "percentage": "0.394",
+          "tot3fg": "146",
+          "year": "18"
+      },
+      {
+          "percentage": "0.244",
+          "tot3fg": "11",
+          "year": "20"
+      }
+  ],
+  "player" : "jasonterry",
+  "Data" : [
+      {
+          "percentage": "0.293",
+          "tot3fg": "46",
+          "year": "1"
+      },
+      {
+          "percentage": "0.387",
+          "tot3fg": "172",
+          "year": "3"
+      },
+      {
+          "percentage": "0.347",
+          "tot3fg": "146",
+          "year": "5"
+      },
+      {
+          "percentage": "0.411",
+          "tot3fg": "171",
+          "year": "7"
+      },
+      {
+          "percentage": "0.375",
+          "tot3fg": "136",
+          "year": "9"
+      },
+      {
+          "percentage": "0.365",
+          "tot3fg": "136",
+          "year": "11"
+      },
+      {
+          "percentage": "0.378",
+          "tot3fg": "138",
+          "year": "13"
+      },
+      {
+          "percentage": "0.379",
+          "tot3fg": "39",
+          "year": "15"
+      },
+      {
+          "percentage": "0.372",
+          "tot3fg": "35",
+          "year": "17"
+      },
+      {
+          "percentage": "0.395",
+          "tot3fg": "124",
+          "year": "2"
+      },
+      {
+          "percentage": "0.371",
+          "tot3fg": "160",
+          "year": "4"
+      },
+      {
+          "percentage": "0.42",
+          "tot3fg": "103",
+          "year": "6"
+      },
+      {
+          "percentage": "0.438",
+          "tot3fg": "162",
+          "year": "8"
+      },
+      {
+          "percentage": "0.366",
+          "tot3fg": "167",
+          "year": "10"
+      },
+      {
+          "percentage": "0.362",
+          "tot3fg": "127",
+          "year": "12"
+      },
+      {
+          "percentage": "0.372",
+          "tot3fg": "123",
+          "year": "14"
+      },
+      {
+          "percentage": "0.39",
+          "tot3fg": "126",
+          "year": "16"
+      }
+  ]
+}
