@@ -2,7 +2,7 @@
 
  //testing with steph curry - 201939
 
-var request = require('request');
+var request = require(['request']);
 var dl = require('datalib');
 var d3 = require('d3');
 

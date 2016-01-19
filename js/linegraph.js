@@ -2,6 +2,13 @@
 
 // curry 2015/2016: "tot3fg": 150,
 
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
+
+
 d3.json("./data/new3pointers.json", function(error, data){
   if (error) throw error;
 
@@ -35,7 +42,7 @@ d3.json("./data/new3pointers.json", function(error, data){
   // ------------ CREATING 3FG LINE GRAPH --------------------- //
 
   var line = d3.svg.line()
-    .interpolate("basis")
+    .interpolate("linear")
     .x( function (d) { return x(d.year); })
     .y( function (d) { return y(d.tot3fg); });
 
@@ -75,7 +82,8 @@ d3.json("./data/new3pointers.json", function(error, data){
 
   var playerdata = svg.selectAll(".playerdata")
     .data(players)
-    .enter().append("g")
+    .enter()
+    .append("g")
     .attr("class", "playerdata");
 
   playerdata.append("path")
@@ -83,23 +91,35 @@ d3.json("./data/new3pointers.json", function(error, data){
     .attr("d", function (d) {
       return line(d.Data);
     })
-    .style("stroke", function (d) {
-      return color(d.player);
+    .attr("id", function(d){
+                return "line" +  d.player;
+              })
+    .style("stroke", "lightgrey")
+    .on("mouseover", function(d) {
+      if(this.style.stroke !== "red" ) {
+        d3.select(this).attr("r", 10).style("stroke", "green");
+        this.parentNode.appendChild(this);
+      }
+    })
+    .on("mouseout", function(d) {
+      if(this.style.stroke !== "red" ) {
+        d3.select(this).attr("r", 5.5).style("stroke", "lightgrey");
+      }
     });
 
-  playerdata.append("text")
-    .datum(function (d) {
-      return {
-        name: d.player,
-        year: d.Data[d.Data.length -1].year,
-        tot3fg: d.Data[d.Data.length -1].tot3fg
-      };
-    })
-    .attr("transform", function (d) {
-      return "translate(" + x(d.year) + "," + y(d.value) + ")";
-    })
-    .attr("x", 3)
-    .attr("dy", ".35em");
+  // playerdata.append("text")
+  //   .datum(function (d) {
+  //     return {
+  //       name: d.player,
+  //       year: d.Data[d.Data.length -1].year,
+  //       tot3fg: d.Data[d.Data.length -1].tot3fg
+  //     };
+  //   })
+  //   .attr("transform", function (d) {
+  //     return "translate(" + x(d.year) + "," + y(d.value) + ")";
+  //   })
+  //   .attr("x", 3)
+  //   .attr("dy", ".35em");
     // .text(function (d) {
     //   return d.name;
     // });
@@ -111,10 +131,17 @@ d3.json("./data/new3pointers.json", function(error, data){
 
   // ------------------ CREATING EFFICIENCY LINE GRAPH --------------------//
 
-  var effline = d3.effsvg.line()
-    .interpolate("basis")
+  var effy = d3.scale.linear()
+    .range([height,0]);
+
+  var effyAxis = d3.svg.axis()
+    .scale(effy)
+    .orient("left");
+
+  var effline = d3.svg.line()
+    .interpolate("linear")
     .x( function (d) { return x(d.year); })
-    .y( function (d) { return y(d.percentage); });
+    .y( function (d) { return effy(+d.percentage); });
 
   var effsvg = d3.select("#efficiency")
     .append("svg")
@@ -123,12 +150,10 @@ d3.json("./data/new3pointers.json", function(error, data){
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  color.domain(data.map(function (d) { return d.player; }));
-
   var effplayers = data;
 
-  var effminY = d3.min(data, function (kv) { return d3.min(kv.Data, function (d) { return d.percentage; }); });
-  var effmaxY = d3.max(data, function (kv) { return d3.max(kv.Data, function (d) { return d.percentage; }); });
+  var effminY = d3.min(data, function (kv) { return d3.min(kv.Data, function (d) { return +d.percentage; }); });
+  var effmaxY = d3.max(data, function (kv) { return d3.max(kv.Data, function (d) { return +d.percentage; }); });
 
   x.domain([minX, maxX]);
   effy.domain([effminY, effmaxY]);
@@ -140,7 +165,7 @@ d3.json("./data/new3pointers.json", function(error, data){
 
   effsvg.append("g")
     .attr("class", "y axis")
-    .call(yAxis)
+    .call(effyAxis)
     .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
@@ -148,30 +173,42 @@ d3.json("./data/new3pointers.json", function(error, data){
       .style("text-anchor", "end")
       .text("Efficiency");
 
-  var effplayerdata = svg.selectAll(".effplayerdata")
+  var effplayerdata = effsvg.selectAll(".effplayerdata")
     .data(effplayers)
     .enter().append("g")
     .attr("class", "effplayerdata");
 
   effplayerdata.append("path")
-    .attr("class", "line")
+    .attr("class", "effline")
     .attr("d", function (d) {
-      return line(d.Data);
+      return effline(d.Data);
     })
-    .style("stroke", function (d) {
-      return color(d.player);
-      });
+    .attr("id", function(d){
+                return d.player;
+              })
+    .style("stroke", "lightgrey")
+    .on("mouseover", function(d) {
+      if(this.style.stroke !== "red" ) {
+        d3.select(this).attr("r", 10).style("stroke", "green");
+        d3.select(this).moveToFront();
+      }
+    })
+    .on("mouseout", function(d) {
+      if(this.style.stroke !== "red" ) {
+        d3.select(this).attr("r", 5.5).style("stroke", "lightgrey");
+      }
+    });
 
   effplayerdata.append("text")
     .datum(function (d) {
       return {
         name: d.player,
-        year: d.year[d.Data.length -1].year,
-        efficiency: d.Data[d.Data.length -1].percentage
+        year: d.Data[d.Data.length - 1].year,
+        efficiency: d.Data[d.Data.length - 1].percentage
       };
     })
-    .attr("transform", function (d) {
-      return "translate(" + x(d.year) + "," + y(d.value) + ")";
+    .attr("transform", function (d, i) {
+      return "translate(" + x(d.year) + "," + y(d.percentage, i) + ")";
     })
     .attr("x", 3)
     .attr("dy", ".35em")

@@ -1,9 +1,16 @@
 // creating a scatterplot
 
+// https://github.com/wbkd/d3-extended for this function
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function() {
+    this.parentNode.appendChild(this);
+  });
+};
+
 d3.json("./data/total3pointers.json", function(error, data) {
   if (error) throw error;
 
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
+  var margin = {top: 20, right: 20, bottom: 45, left: 40},
       width = 800,
       height = 400;
 
@@ -41,7 +48,7 @@ d3.json("./data/total3pointers.json", function(error, data) {
 
   var tip = d3.tip()
     .attr('class', 'd3-tip')
-    .offset([-5, 70])
+    .offset([-5, 0])
     .html(function(d){
         return "<strong>"+ d.player +":</strong> <span style='color:red'>" + d.total3pointers + "</span>";
     });
@@ -53,17 +60,18 @@ d3.json("./data/total3pointers.json", function(error, data) {
 
   svg.append("text")
       .attr("fill", "#414241")
-      .attr("text-anchor", "end")
-      .attr("x", width / 8)
-      .attr("y", -10)
-      .text("Total 3 pointers made");
+      .attr("transform", "rotate(-90)")
+      .style("text-anchor", "end")
+      .attr("x", margin.left)
+      .attr("y", margin.top)
+      .text("Total 3FG");
 
-  // svg.append("text")
-  //     .attr("fill", "#414241")
-  //     .attr("text-anchor", "end")
-  //     .attr("x", width - margin-right)
-  //     .attr("y", height)
-  //     .text("Years in league");
+  svg.append("text")
+      .attr("fill", "#414241")
+      .attr("text-anchor", "end")
+      .attr("x", width - margin.right - margin.left)
+      .attr("y", height - margin.top)
+      .text("Years in league");
 
   var players = svg.selectAll("g.node").data(data, function(d){
     return d.player;
@@ -77,15 +85,45 @@ d3.json("./data/total3pointers.json", function(error, data) {
   playergroup.append("circle")
     .attr("r", 5)
     .attr("class", "dot")
-    .style("fill", function(d) {
-      return color(d.player);
-    });
+    // .style("fill", function(d) {
+    //   return color(d.player);
+    // });
+    .style("fill", "grey");
+
+    // svg.selectAll("circle")
+    // .on('mouseover', tip.show)
+    // .on('mouseout', tip.hide)
+    // .on("click", function(d) {
+    //   selectedplayer = document.getElementById("selectedplayer").innerHTML = d.player;
+    //   d3.select('"' + "#" + selectedplayer + '"').attr("r", 10).style("stroke", "red");
+    //   d3.select("#joejohnson").attr("r", 10).style("stroke", "red");
+    // });
+
+    selectedplayer = "stephencurry";
 
     svg.selectAll("circle")
-    .on('mouseover', tip.show)
-    .on('mouseout', tip.hide)
+    .on('mouseover', function() {
+      d3.select(this).attr("r", 10);
+      d3.select(this).style("fill", "red");
+      this.parentNode.appendChild(this);
+    })
+    .on('mouseout', function(d){
+      d3.select(this).attr("r", 5);
+      d3.select(this).style("fill", "grey");
+      var nextSibling = d3.select("#circle-"+(d+1)).node();
+        this.parentNode.insertBefore(this, nextSibling);
+    })
     .on("click", function(d) {
-      document.getElementById("selectedplayer").innerHTML = d.player;
+      d3.select('#' + selectedplayer).style("stroke", "lightgrey");
+      d3.select('#line' + selectedplayer).style("stroke", "lightgrey");
+
+      selectedplayer = document.getElementById("selectedplayer").innerHTML = d.player;
+
+      d3.select('#' + selectedplayer).attr("r", 10).style("stroke", "red");
+      d3.select('#line' + selectedplayer).attr("r", 10).style("stroke", "red");
+
+      // svg.select('line#' + selectedplayer).moveToFront();
+      // svg.select('#' + selectedplayer).moveToFront();
     });
 
   svg.selectAll('.axis line, .axis path')

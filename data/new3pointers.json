@@ -208,45 +208,14 @@
             "year": 3
         },
         {
-            "percentage": 0.361,
-            "tot3fg": 185,
-            "year": 5
-        },
-        {
-            "percentage": 0.32,
-            "tot3fg": 103,
-            "year": 7
-        },
-        {
-            "percentage": 0.338,
-            "tot3fg": 107,
-            "year": 9
-        },
-        {
-            "percentage": 0.382,
-            "tot3fg": 163,
-            "year": 11
-        },
-        {
-            "percentage": 0.308,
-            "tot3fg": 80,
-            "year": 13
-        },
-        {
-            "percentage": 0.361,
-            "tot3fg": 161,
-            "year": 15
-        },
-        {
-            "percentage": 0.316,
-            "tot3fg": 42,
-            "year": 17
-        },
-
-        {
             "percentage": 0.317,
             "tot3fg": 165,
             "year": 4
+        },
+        {
+            "percentage": 0.361,
+            "tot3fg": 185,
+            "year": 5
         },
         {
             "percentage": 0.345,
@@ -254,9 +223,19 @@
             "year": 6
         },
         {
+            "percentage": 0.32,
+            "tot3fg": 103,
+            "year": 7
+        },
+        {
             "percentage": 0.356,
             "tot3fg": 176,
             "year": 8
+        },
+        {
+            "percentage": 0.338,
+            "tot3fg": 107,
+            "year": 9
         },
         {
             "percentage": 0.455,
@@ -264,9 +243,19 @@
             "year": 10
         },
         {
+            "percentage": 0.382,
+            "tot3fg": 163,
+            "year": 11
+        },
+        {
             "percentage": 0.341,
             "tot3fg": 119,
             "year": 12
+        },
+        {
+            "percentage": 0.308,
+            "tot3fg": 80,
+            "year": 13
         },
         {
             "percentage": 0.376,
@@ -274,9 +263,19 @@
             "year": 14
         },
         {
+            "percentage": 0.361,
+            "tot3fg": 161,
+            "year": 15
+        },
+        {
             "percentage": 0.327,
             "tot3fg": 119,
             "year": 16
+        },
+        {
+            "percentage": 0.316,
+            "tot3fg": 42,
+            "year": 17
         }
     ]
   },
