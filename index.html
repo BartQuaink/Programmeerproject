@@ -28,9 +28,10 @@
 		<link rel="stylesheet" href="style/css/style.css">
 		<link rel="stylesheet" href="style/css/mobile.css">
 		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" type="text/css" href="d3/d3.basketball-shot-chart.css">
 
 		<!-- libraries -->
-		<script src="./d3/d3.min.js"></script>
+		<script src="d3/d3.min.js"></script>
 		<script src="http://rawgit.com/virajsanghvi/d3-plugins/master/hexbin/hexbin.js"></script>
     <script src="http://rawgit.com/misoproject/d3.chart/master/d3.chart.js"></script>
     <script src="http://rawgit.com/virajsanghvi/d3.chart.defaults/master/d3.chart.defaults.js"></script>
@@ -62,7 +63,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand page-scroll" href="index.html">Programmeerproject><img src="img/programmeerproject.png" alt="img"</a>
+                      <!-- <a class="navbar-brand page-scroll" href="index.html">Programmeerproject><img src="img/programmeerproject.png" alt="img"</a> -->
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -233,12 +234,20 @@
                                         </div>
 																				<div class="row" style="display:none;" id="efficiency"></div>
 																				<div class="row" id="shotchart">
+																					<div class="dropdown">
+    																				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Year<span class="caret"></span></button>
+    																				<ul class="dropdown-menu">
+      																				<li><a href="#">2013-14</a></li>
+      																				<li><a href="#">2014-2015</a></li>
+      																				<li><a href="#">2015-2016</a></li>
+    																				</ul>
+  																				</div>
 																					<pre style="display:none" id="code">
 																			    var heatRange = ['#5458A2', '#6689BB', '#FADC97', '#F08460', '#B02B48'];
 																			      d3.select(document.getElementById('chart'))
 																			        .append("svg")
 																			          .chart("BasketballShotChart", {
-																			            width: 600,
+																			            width: 800,
 																			            // instead of makes/attempts, use z
 																			            hexagonFillValue: function(d) {  return d.z; },
 																			            // switch heat scale domain to [-2.5, 2.5] to reflect range of z values
@@ -256,12 +265,15 @@
 																			              bin.attempts = totalAttempts + attempts;
 																			              bin.z = (totalZ + (point.z * attempts))/bin.attempts;
 																			            },
+																									hexagonRadiusThreshold: 2,
 																			          })
 																			            .draw(data);
 																			    </pre>
 																				</div>
 																				<div id="chart" style="display:none;text-align:center;"></div>
-																				<script src="js/oladipotest.js"></script>
+																				<!-- <script src="js/oladipotest.js"></script> -->
+																				<!-- <script src="js/jamestest.js"></script> -->
+																				<script src="data/shotchartdata/201939/2013-14.js"></script>
                                     </div> <!-- end graph section -->
                                 </div> <!-- close portfolio content section -->
                             </div> <!-- close entire portfolio -->
@@ -324,8 +336,10 @@
 		<script src="js/theme.js"></script>
 
 		<!-- Testing -->
-		<script src="resources/require.js"></script>
-		<script src="data/nbascraper.js"></script>
+		<!-- <script src="resources/require.js"></script> -->
+		<!-- <script src="data/nbascraper.js"></script> -->
+		<script src="data/shotchartdata/shotchartdata.js"></script>
+		<script src="js/datalib.js"></script>
 
 		<!-- Onclick events -->
 		<script>

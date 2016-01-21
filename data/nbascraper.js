@@ -2,9 +2,9 @@
 
  //testing with steph curry - 201939
 
-var request = require(['request']);
-var dl = require('datalib');
-var d3 = require('d3');
+var request = require('js/request');
+var dl = require('js/datalib');
+var d3 = require('d3/d3');
 
 var shots_url = 'http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPAR'+
 'AMS=2014-15&ContextFilter=&ContextMeasure=FGA&DateFrom=&D'+
