@@ -1,7 +1,5 @@
 // linegraph with stats for total 3FG and 3FG%/efficiency
 
-// curry 2015/2016: "tot3fg": 150,
-
 d3.selection.prototype.moveToFront = function() {
   return this.each(function(){
     this.parentNode.appendChild(this);
@@ -12,8 +10,8 @@ d3.selection.prototype.moveToFront = function() {
 d3.json("./data/new3pointers.json", function(error, data){
   if (error) throw error;
 
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
-      width = 800 - margin.left - margin.right,
+  var margin = {top: 20, right: 80, bottom: 30, left: 40},
+      width = 850 - margin.left - margin.right,
       height = 450 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -98,31 +96,37 @@ d3.json("./data/new3pointers.json", function(error, data){
     .on("mouseover", function(d) {
       if(this.style.stroke !== "red" ) {
         d3.select(this).attr("r", 10).style("stroke", "green");
+        d3.select("#linetext" + d.player).style("stroke", "green");
         this.parentNode.appendChild(this);
       }
     })
     .on("mouseout", function(d) {
       if(this.style.stroke !== "red" ) {
         d3.select(this).attr("r", 5.5).style("stroke", "lightgrey");
+        d3.select("#linetext" + d.player).style("stroke", "lightgrey");
       }
     });
 
-  // playerdata.append("text")
-  //   .datum(function (d) {
-  //     return {
-  //       name: d.player,
-  //       year: d.Data[d.Data.length -1].year,
-  //       tot3fg: d.Data[d.Data.length -1].tot3fg
-  //     };
-  //   })
-  //   .attr("transform", function (d) {
-  //     return "translate(" + x(d.year) + "," + y(d.value) + ")";
-  //   })
-  //   .attr("x", 3)
-  //   .attr("dy", ".35em");
-    // .text(function (d) {
-    //   return d.name;
-    // });
+  playerdata.append("text")
+    .attr("id", function(d){
+              return "linetext" +  d.player;
+            })
+    .style("stroke", "lightgrey")
+    .datum(function (d) {
+      return {
+        name: d.player,
+        year: d.Data[d.Data.length -1].year,
+        tot3fg: d.Data[d.Data.length -1].tot3fg
+      };
+    })
+    .attr("transform", function (d) {
+      return "translate(" + x(d.year) + "," + y(d.tot3fg) + ")";
+    })
+    .attr("x", 3)
+    .attr("dy", ".35em")
+    .text(function (d) {
+      return d.name;
+    });
 
     svg.selectAll("line")
     .on('mouseover', tip.show)
@@ -190,25 +194,30 @@ d3.json("./data/new3pointers.json", function(error, data){
     .on("mouseover", function(d) {
       if(this.style.stroke !== "red" ) {
         d3.select(this).attr("r", 10).style("stroke", "green");
-        d3.select(this).moveToFront();
+        d3.select("#efflinetext" + d.player).style("stroke", "green");
       }
     })
     .on("mouseout", function(d) {
       if(this.style.stroke !== "red" ) {
         d3.select(this).attr("r", 5.5).style("stroke", "lightgrey");
+        d3.select("#efflinetext" + d.player).style("stroke", "lightgrey");
       }
     });
 
   effplayerdata.append("text")
+  .attr("id", function(d){
+            return "efflinetext" +  d.player;
+          })
+    .style("stroke", "lightgrey")
     .datum(function (d) {
       return {
         name: d.player,
         year: d.Data[d.Data.length - 1].year,
-        efficiency: d.Data[d.Data.length - 1].percentage
+        percentage: d.Data[d.Data.length - 1].percentage
       };
     })
-    .attr("transform", function (d, i) {
-      return "translate(" + x(d.year) + "," + y(d.percentage, i) + ")";
+    .attr("transform", function (d) {
+      return "translate(" + x(d.year) + "," + y( d.percentage) + ")";
     })
     .attr("x", 3)
     .attr("dy", ".35em")

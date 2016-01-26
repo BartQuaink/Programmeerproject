@@ -2,76 +2,91 @@
     {
         "player": "curry prediction",
         "total3pointers": 4023,
-        "years": 18
+        "years": 18,
+        "playercode": ""
     },
     {
         "player": "stephencurry",
         "total3pointers": 1341,
-        "years": 6
+        "years": 6,
+        "playercode": "201939"
     },
     {
         "player": "rayallen",
         "total3pointers": 2973,
-        "years": 18
+        "years": 18,
+        "playercode": "951"
     },
     {
         "player": "reggiemiller",
         "total3pointers": 2560,
-        "years": 18
+        "years": 18,
+        "playercode": "397"
     },
     {
         "player": "jasonterry",
         "total3pointers": 2111,
-        "years": 16
+        "years": 16,
+        "playercode": "1891"
     },
     {
         "player": "paulpierce",
         "total3pointers": 2087,
-        "years": 18
+        "years": 18,
+        "playercode": "1718"
     },
     {
         "player": "jasonkidd",
         "total3pointers": 1988,
-        "years": 20
+        "years": 20,
+        "playercode": "467"
     },
     {
         "player": "vincecarter",
         "total3pointers": 1889,
-        "years": 20
+        "years": 20,
+        "playercode": "1713"
     },
     {
         "player": "jamalcrawford",
         "total3pointers": 1858,
-        "years": 16
+        "years": 16,
+        "playercode": "2037"
     },
     {
         "player": "chaunceybillups",
         "total3pointers": 1922,
-        "years": 20
+        "years": 20,
+        "playercode": "1497"
     },
     {
         "player": "kylekorver",
         "total3pointers": 1792,
-        "years": 14
+        "years": 14,
+        "playercode": "2594"
     },
     {
         "player": "rashardlewis",
         "total3pointers": 1802,
-        "years": 16
+        "years": 16,
+        "playercode": "1740"
     },
     {
         "player": "pejastojakovic",
         "total3pointers": 1802,
-        "years": 16
+        "years": 16,
+        "playercode": "978"
     },
     {
         "player": "joejohnson",
         "total3pointers": 1756,
-        "years": 16
+        "years": 16,
+        "playercode": "2207"
     },
     {
         "player": "kobebryant",
         "total3pointers": 1777,
-        "years": 20
+        "years": 20,
+        "playercode": "977"
     }
 ]
