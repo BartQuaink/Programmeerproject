@@ -17,9 +17,9 @@ d3.json("./data/total3pointers.json", function(error, data) {
         return "<strong>"+ d.player +":</strong> <span style='color:red'>" + d.total3pointers + "</span>";
     });
 
-  var margin = {top: 20, right: 20, bottom: 45, left: 40},
-      width = 800,
-      height = 400;
+  var margin = {top: 50, right: 150, bottom: 45, left: 40},
+      width = 1000,
+      height = 500;
 
   //
   var svg = d3.select("#scatterplot")
@@ -61,15 +61,15 @@ d3.json("./data/total3pointers.json", function(error, data) {
       .attr("fill", "#414241")
       .attr("transform", "rotate(-90)")
       .style("text-anchor", "end")
-      .attr("x", margin.left)
-      .attr("y", margin.top)
+      .attr("x", margin.left - 25)
+      .attr("y", margin.top - 25)
       .text("Total 3FG");
 
   svg.append("text")
       .attr("fill", "#414241")
       .attr("text-anchor", "end")
       .attr("x", width - margin.right - margin.left)
-      .attr("y", height - margin.top)
+      .attr("y", height - margin.top - 10)
       .text("Years in league");
 
   var players = svg.selectAll("g.node").data(data, function(d){
@@ -82,29 +82,24 @@ d3.json("./data/total3pointers.json", function(error, data) {
     });
 
   playergroup.append("circle")
+    .attr("id", function(d){
+            return d.player;
+          })
     .attr("r", 5)
     .attr("class", "dot")
     .style("fill", "grey");
-
-    svg.selectAll("circle")
-    .on("click", function(d) {
-      selectedplayer = document.getElementById("selectedplayer").innerHTML = d.player;
-      d3.select('"' + "#" + selectedplayer + '"').attr("r", 10).style("stroke", "red");
-      d3.select("#joejohnson").attr("r", 10).style("stroke", "red");
-    });
 
     selectedplayer = "stephencurry";
     selectedplayercode = "201939";
 
     svg.selectAll("circle")
     .on('mouseover', function() {
-      d3.select(this).attr("r", 10);
-      d3.select(this).style("fill", "red");
-      this.parentNode.appendChild(this);
+      d3.select(this).attr("r", 10).style("fill", "red");
+      d3.select("#scatterplottext" + this.id).attr("font-size", "15px").style("stroke", "red");
     })
     .on('mouseout', function(d){
-      d3.select(this).attr("r", 5);
-      d3.select(this).style("fill", "grey");
+      d3.select(this).attr("r", 5).style("fill", "grey");
+      d3.select("#scatterplottext" + this.id).attr("font-size", "10px").style("stroke", "black");
       // var nextSibling = d3.select("#circle-"+(d+1)).node();
       //   this.parentNode.insertBefore(this, nextSibling);
     })
@@ -128,8 +123,7 @@ d3.json("./data/total3pointers.json", function(error, data) {
       svg.select('#' + selectedplayer).moveToFront();
     });
 
-    svg.selectAll("circle")
-      .append("text")
+    playergroup.append("text")
       .attr("id", function(d){
                 return "scatterplottext" +  d.player;
               })
@@ -141,10 +135,9 @@ d3.json("./data/total3pointers.json", function(error, data) {
             total3pointers: d.total3pointers
           };
         })
-        .attr("transform", function (d) {
-          return "translate(" + x(d.years) + "," + y( d.total3pointers) + ")";
-        })
-        .attr("x", 3)
+        .attr("x", 10)
+        .attr("y", -5)
+        .attr("font-size", "10px")
         .attr("dy", ".35em")
         .text(function (d) {
           return d.name + ": " + d.total3pointers;

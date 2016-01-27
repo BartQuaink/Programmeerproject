@@ -49,6 +49,7 @@ d3.json("./data/new3pointers.json", function(error, data){
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
+      .attr("id", "linesvg")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   color.domain(data.map(function (d) { return d.player; }));
@@ -97,7 +98,9 @@ d3.json("./data/new3pointers.json", function(error, data){
       if(this.style.stroke !== "red" ) {
         d3.select(this).attr("r", 10).style("stroke", "green");
         d3.select("#linetext" + d.player).style("stroke", "green");
-        this.parentNode.appendChild(this);
+
+        linetempfile = this.parentNode;
+        document.getElementById("linesvg").appendChild(linetempfile);
       }
     })
     .on("mouseout", function(d) {
@@ -123,6 +126,7 @@ d3.json("./data/new3pointers.json", function(error, data){
       return "translate(" + x(d.year) + "," + y(d.tot3fg) + ")";
     })
     .attr("x", 3)
+    .attr("font-size", "12px")
     .attr("dy", ".35em")
     .text(function (d) {
       return d.name;
@@ -152,6 +156,7 @@ d3.json("./data/new3pointers.json", function(error, data){
       .attr("width", width + margin.left + margin.right)
       .attr("height", height+ margin.top + margin.bottom)
     .append("g")
+      .attr("id", "effsvg")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var effplayers = data;
@@ -195,6 +200,10 @@ d3.json("./data/new3pointers.json", function(error, data){
       if(this.style.stroke !== "red" ) {
         d3.select(this).attr("r", 10).style("stroke", "green");
         d3.select("#efflinetext" + d.player).style("stroke", "green");
+
+        tempfile = this.parentNode;
+        document.getElementById("effsvg").appendChild(tempfile);
+
       }
     })
     .on("mouseout", function(d) {
@@ -220,6 +229,7 @@ d3.json("./data/new3pointers.json", function(error, data){
       return "translate(" + x(d.year) + "," + y( d.percentage) + ")";
     })
     .attr("x", 3)
+    .attr("font-size", "12px")
     .attr("dy", ".35em")
     .text(function (d) {
       return d.name;

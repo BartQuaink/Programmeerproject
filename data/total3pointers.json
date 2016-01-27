@@ -1,11 +1,5 @@
 [
     {
-        "player": "curry prediction",
-        "total3pointers": 4023,
-        "years": 18,
-        "playercode": ""
-    },
-    {
         "player": "stephencurry",
         "total3pointers": 1341,
         "years": 6,
@@ -66,16 +60,16 @@
         "playercode": "2594"
     },
     {
-        "player": "rashardlewis",
-        "total3pointers": 1802,
-        "years": 16,
-        "playercode": "1740"
-    },
-    {
         "player": "pejastojakovic",
         "total3pointers": 1802,
         "years": 16,
         "playercode": "978"
+    },
+    {
+        "player": "rashardlewis",
+        "total3pointers": 1787,
+        "years": 17,
+        "playercode": "1740"
     },
     {
         "player": "joejohnson",
