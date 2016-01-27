@@ -23,6 +23,7 @@ noUiSlider.create(stepSlider, {
 function UpdateShotChart(PlayerID) {
   var player = document.getElementById("selectedplayercode").innerHTML; // get the player code to know which player has been selected
   var years = getYears(player); // use GetYears to get an array with the years the selected player has played in the NBA
+  stepSlider.noUiSlider.off("update"); // event change was binded in another event, thus the listener looped multiple times, this fixes it
 
   // update the slider with the data from years
   stepSlider.noUiSlider.updateOptions({
@@ -36,49 +37,47 @@ function UpdateShotChart(PlayerID) {
 
   // each time the slider updates, the shot chart will update
   stepSlider.noUiSlider.on('update', function( values, handle ) {
+    console.log(player);
   	stepSliderValue.innerHTML = Math.floor(values[handle]); // get the index for the corresponding season, this value = 1 means first season
     document.getElementById("slider-season").innerHTML = "Season: " + Math.floor(values[handle]); // display which season has been selected
 
-    if (player !== "") { // error check for some reason, no idea why it happened
-      // get the data and update the chart for real
-      d3.json("./data/shotchartdata/"+player+"/"+years[stepSliderValue.innerHTML - 1]+".json", function CreateShotChart(error, startdata) {
-        console.log(player);
-        player = ""; // needed for error checking
-        var tenderData = startdata; // get startdata
+    // get the data and update the chart for real
+    d3.json("./data/shotchartdata/"+player+"/"+years[stepSliderValue.innerHTML - 1]+".json", function CreateShotChart(error, startdata) {
+      if (error) throw error;
+      var tenderData = startdata; // get startdata
 
-        // nesting function to nest close values together
-        var coll = d3.nest()
-              .key(function(d) { return [d.x, d.y]; }) // selected keys are x and y value of a shot
-              .rollup(function(v) { return { // returns a dictionary with data of shots of group with close x and y values
-                  made: d3.sum(v, function(d) {return d.made;}),
-                  attempts: d3.sum(v, function(d){return d.attempts;}),
-                  shootingPercentage:  d3.sum(v, function(d) {return d.made;})/d3.sum(v, function(d){return d.attempts;}) // shootingpct is made shots / attemps
-              };})
-              .entries(tenderData); // returns a new array that contains the key/value pairs for each index in the array
+      // nesting function to nest close values together
+      var coll = d3.nest()
+            .key(function(d) { return [d.x, d.y]; }) // selected keys are x and y value of a shot
+            .rollup(function(v) { return { // returns a dictionary with data of shots of group with close x and y values
+                made: d3.sum(v, function(d) {return d.made;}),
+                attempts: d3.sum(v, function(d){return d.attempts;}),
+                shootingPercentage:  d3.sum(v, function(d) {return d.made;})/d3.sum(v, function(d){return d.attempts;}) // shootingpct is made shots / attemps
+            };})
+            .entries(tenderData); // returns a new array that contains the key/value pairs for each index in the array
 
-        // initialise several lists
-        var shotper = [];
-        var finalData = [];
-        var z = [];
-        coll.forEach(function(a) { // parse the stringified keys
-            a.key = JSON.parse("[" + a.key + "]");
-            z.push(a.values.shootingPercentage);
-        });
-
-        meanShot = mean(z); // calculate the mean of the array
-        var shotSTDV = standardDeviation(z); // calculate the standard deviation of the array
-
-        coll.forEach(function(a){
-                var k = (a.values.shootingPercentage - meanShot)/shotSTDV; // efficiency factor, pct - mean of all shots divided by the std deviation of all shots
-                finalData.push({"x": a.key[0], "y": a.key[1], "z": k, "made": a.values.made, "attempts": a.values.attempts}); // push all data together in new array
-            });
-
-        var data = finalData; // set data as the final data, needed to update the chart with in html function
-        d3.select(".shot-chart").remove(); // remove the old shot chart
-        // eval needed to execute the json string of data in to the code written in <pre> in the HTML, so no misuse here
-        eval(document.getElementById('code').innerHTML); // create chart
+      // initialise several lists
+      var shotper = [];
+      var finalData = [];
+      var z = [];
+      coll.forEach(function(a) { // parse the stringified keys
+          a.key = JSON.parse("[" + a.key + "]");
+          z.push(a.values.shootingPercentage);
       });
-    }
+
+      meanShot = mean(z); // calculate the mean of the array
+      var shotSTDV = standardDeviation(z); // calculate the standard deviation of the array
+
+      coll.forEach(function(a){
+              var k = (a.values.shootingPercentage - meanShot)/shotSTDV; // efficiency factor, pct - mean of all shots divided by the std deviation of all shots
+              finalData.push({"x": a.key[0], "y": a.key[1], "z": k, "made": a.values.made, "attempts": a.values.attempts}); // push all data together in new array
+          });
+
+      var data = finalData; // set data as the final data, needed to update the chart with in html function
+      d3.select(".shot-chart").remove(); // remove the old shot chart
+      // eval needed to execute the json string of data in to the code written in <pre> in the HTML, so no evil/misuse here
+      eval(document.getElementById('code').innerHTML); // create chart
+    });
   });
 }
 
@@ -141,13 +140,3 @@ function standardDeviation(values){
   var stdDev = Math.sqrt(avgSquareDiff);
   return stdDev;
 }
-//
-//
-// function average(data){
-//   var sum = data.reduce(function(sum, value){
-//     return sum + value;
-//   }, 0);
-//
-//   var avg = sum / data.length;
-//   return avg;
-// }
