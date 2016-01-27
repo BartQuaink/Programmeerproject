@@ -27,6 +27,11 @@ body {
   text-align: center;
 }
 
+#slider-season {
+  font-size: 15px;
+  padding-top: 30px;
+}
+
 /* Style northward tooltips differently */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
@@ -95,6 +100,15 @@ path {
 .text{
   font-size:10px;
   text-transform:capitalize;
+}
+
+/* don't let the user select any text */
+text {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
 }
 
 #containermap {

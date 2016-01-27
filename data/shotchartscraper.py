@@ -18,7 +18,9 @@ percentage = []
 i=0
 
 for player in players:
+    print player
     for season in seasons:
+        print season
         shots_url = 'http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPAR'+\
         'AMS='+season+'&ContextFilter=&ContextMeasure=FGA&DateFrom=&D'+\
         'ateTo=&GameID=&GameSegment=&LastNGames=0&LeagueID=00&Loca'+\
@@ -62,9 +64,8 @@ for player in players:
             i+=1
         i=0
 
-        #print json file
         # if not (len(tenderData) == 0):
-        if tenderData:
-            print season
-            with open("shotchartdata/" + player + "/" + season + ".json", 'w') as outputjson:
-                json.dump(tenderData, outputjson)
+        # if tenderData:
+        #     print season
+        #     with open("shotchartdata/" + player + "/" + season + ".json", 'w') as outputjson:
+        #         json.dump(tenderData, outputjson)

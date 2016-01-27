@@ -237,10 +237,10 @@
 																					<script src="js/linegraph.js"></script>
                                         </div>
 																				<div class="row" style="display:none;" id="efficiency"></div>
-																				<div id="ShotChartData" style="display:none"></div>
 																				<div class="row" id="shotchart">
 																					<div id="slider-step" style="display:none"></div>
-																					<div id="slider-step-value"></div>
+																					<div id="slider-step-value" style="display:none"></div>
+																					<div id="slider-season"></div>
   																				</div>
 																					<pre style="display:none" id="code">
 																			    var heatRange = ['#5458A2', '#6689BB', '#FADC97', '#F08460', '#B02B48'];
@@ -265,7 +265,7 @@
 																			              bin.attempts = totalAttempts + attempts;
 																			              bin.z = (totalZ + (point.z * attempts))/bin.attempts;
 																			            },
-																									hexagonRadiusThreshold: 1,
+																									hexagonRadiusThreshold: 2,
 																			          })
 																			            .draw(data);
 																			    </pre>

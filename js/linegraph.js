@@ -1,12 +1,4 @@
 // linegraph with stats for total 3FG and 3FG%/efficiency
-
-d3.selection.prototype.moveToFront = function() {
-  return this.each(function(){
-    this.parentNode.appendChild(this);
-  });
-};
-
-
 d3.json("./data/new3pointers.json", function(error, data){
   if (error) throw error;
 
@@ -29,13 +21,6 @@ d3.json("./data/new3pointers.json", function(error, data){
   var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
-
-  var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-5, 70])
-    .html(function(d){
-        return "<strong>"+ d.player +":</strong> <span style='color:red'>" + d.Data.tot3fg + "</span>";
-    });
 
   // ------------ CREATING 3FG LINE GRAPH --------------------- //
 
@@ -132,11 +117,6 @@ d3.json("./data/new3pointers.json", function(error, data){
       return d.name;
     });
 
-    svg.selectAll("line")
-    .on('mouseover', tip.show)
-    .on('mouseout', tip.hide);
-
-
   // ------------------ CREATING EFFICIENCY LINE GRAPH --------------------//
 
   var effy = d3.scale.linear()
@@ -193,7 +173,7 @@ d3.json("./data/new3pointers.json", function(error, data){
       return effline(d.Data);
     })
     .attr("id", function(d){
-                return d.player;
+                return "eff" + d.player;
               })
     .style("stroke", "lightgrey")
     .on("mouseover", function(d) {
@@ -203,7 +183,6 @@ d3.json("./data/new3pointers.json", function(error, data){
 
         tempfile = this.parentNode;
         document.getElementById("effsvg").appendChild(tempfile);
-
       }
     })
     .on("mouseout", function(d) {
@@ -226,7 +205,7 @@ d3.json("./data/new3pointers.json", function(error, data){
       };
     })
     .attr("transform", function (d) {
-      return "translate(" + x(d.year) + "," + y( d.percentage) + ")";
+      return "translate(" + x(d.year) + "," + effy( d.percentage) + ")";
     })
     .attr("x", 3)
     .attr("font-size", "12px")

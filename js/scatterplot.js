@@ -1,25 +1,10 @@
 // creating a scatterplot
-
-// https://github.com/wbkd/d3-extended for this function
-d3.selection.prototype.moveToFront = function() {
-  return this.each(function() {
-    this.parentNode.appendChild(this);
-  });
-};
-
 d3.json("./data/total3pointers.json", function(error, data) {
   if (error) throw error;
 
-  var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-5, 0])
-    .html(function(d){
-        return "<strong>"+ d.player +":</strong> <span style='color:red'>" + d.total3pointers + "</span>";
-    });
-
   var margin = {top: 50, right: 150, bottom: 45, left: 40},
-      width = 1000,
-      height = 500;
+      width = 1100,
+      height = 550;
 
   //
   var svg = d3.select("#scatterplot")
@@ -27,8 +12,7 @@ d3.json("./data/total3pointers.json", function(error, data) {
         .attr("width", width)
         .attr("height", height)
       .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      .call(tip);
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var x = d3.scale.linear()
       .domain(d3.extent(data, function (d) {
@@ -99,12 +83,10 @@ d3.json("./data/total3pointers.json", function(error, data) {
     })
     .on('mouseout', function(d){
       d3.select(this).attr("r", 5).style("fill", "grey");
-      d3.select("#scatterplottext" + this.id).attr("font-size", "10px").style("stroke", "black");
-      // var nextSibling = d3.select("#circle-"+(d+1)).node();
-      //   this.parentNode.insertBefore(this, nextSibling);
+      d3.select("#scatterplottext" + this.id).attr("font-size", "10px").style("stroke", "grey");
     })
     .on("click", function(d) {
-      d3.select('#' + selectedplayer).style("stroke", "lightgrey");
+      d3.select('#eff' + selectedplayer).style("stroke", "lightgrey");
       d3.select('#line' + selectedplayer).style("stroke", "lightgrey");
 
       d3.select("#linetext" + selectedplayer).style("stroke", "lightgrey");
@@ -112,38 +94,38 @@ d3.json("./data/total3pointers.json", function(error, data) {
 
       selectedplayer = document.getElementById("selectedplayer").innerHTML = d.player;
       document.getElementById("selectedplayercode").innerHTML = d.playercode;
-      // playerid = document.getElementByID
 
-      d3.select('#' + selectedplayer).attr("r", 10).style("stroke", "red");
+      d3.select('#eff' + selectedplayer).attr("r", 10).style("stroke", "red");
       d3.select('#line' + selectedplayer).attr("r", 10).style("stroke", "red");
       d3.select("#linetext" + selectedplayer).style("stroke", "red");
       d3.select("#efflinetext" + selectedplayer).style("stroke", "red");
 
-      svg.select('line#' + selectedplayer).moveToFront();
-      svg.select('#' + selectedplayer).moveToFront();
+      tempfile = document.getElementById("line" + selectedplayer).parentNode;
+      efftempfile = document.getElementById("eff" + selectedplayer).parentNode;
+      document.getElementById("linesvg").appendChild(tempfile);
+      document.getElementById("effsvg").appendChild(efftempfile);
+
     });
 
-    playergroup.append("text")
-      .attr("id", function(d){
-                return "scatterplottext" +  d.player;
-              })
-        .style("stroke", "black")
-        .datum(function (d) {
-          return {
-            name: d.player,
-            years: d.years,
-            total3pointers: d.total3pointers
-          };
-        })
-        .attr("x", 10)
-        .attr("y", -5)
-        .attr("font-size", "10px")
-        .attr("dy", ".35em")
-        .text(function (d) {
-          return d.name + ": " + d.total3pointers;
-        });
-
-  svg.selectAll('.axis line, .axis path')
-     .style({'stroke': 'Black', 'fill': 'none', 'stroke-width': '1px'});
+  playergroup.append("text")
+    .attr("id", function(d){
+      return "scatterplottext" +  d.player;
+    })
+    .style("stroke", "black")
+    .datum(function (d) {
+      return {
+        name: d.player,
+        years: d.years,
+        total3pointers: d.total3pointers
+      };
+    })
+    .attr("x", 10)
+    .attr("y", -5)
+    .attr("font-size", "10px")
+    .attr("dy", ".35em")
+    .style("stroke", "grey")
+    .text(function (d) {
+      return d.name + ": " + d.total3pointers;
+    });
 
 });
