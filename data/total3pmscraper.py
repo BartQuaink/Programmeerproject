@@ -1,4 +1,4 @@
-# scrapes the total 3 pointers made per season for the top 3 point shooters
+# scrapes the total 3 pointers made per season for the top 3 point shooters, needed for the line graphs
 
 import requests
 from lxml import html

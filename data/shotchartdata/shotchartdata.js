@@ -5,9 +5,9 @@
   With some simple math, an efficiency factor (k) is calculated, on which the efficiency in the shot chart will be based on.
 */
 
-var clicked = document.getElementById("scatterplot"); // get info to be able to check if a player has been clicked
-var stepSlider = document.getElementById('slider-step'); // initialise the step slider
-var stepSliderValue = document.getElementById('slider-step-value'); // initialise the value of the slider
+var clicked = document.getElementById("scatterplot");
+var stepSlider = document.getElementById('slider-step');
+var stepSliderValue = document.getElementById('slider-step-value');
 
 // create a step slider, no player has been selected yet so just a slider appears with no values
 noUiSlider.create(stepSlider, {
@@ -21,9 +21,13 @@ noUiSlider.create(stepSlider, {
 
 // function to update the shotchart with all the data
 function UpdateShotChart(PlayerID) {
-  var player = document.getElementById("selectedplayercode").innerHTML; // get the player code to know which player has been selected
-  var years = getYears(player); // use GetYears to get an array with the years the selected player has played in the NBA
-  stepSlider.noUiSlider.off("update"); // event change was binded in another event, thus the listener looped multiple times, this fixes it
+  var player = document.getElementById("selectedplayercode").innerHTML;
+
+  // use GetYears to get an array with the years the selected player has played in the NBA
+  var years = getYears(player);
+
+  // event change was binded in another event, thus the listener looped multiple times, this fixes it
+  stepSlider.noUiSlider.off("update");
 
   // update the slider with the data from years
   stepSlider.noUiSlider.updateOptions({
@@ -37,46 +41,57 @@ function UpdateShotChart(PlayerID) {
 
   // each time the slider updates, the shot chart will update
   stepSlider.noUiSlider.on('update', function( values, handle ) {
-    console.log(player);
-  	stepSliderValue.innerHTML = Math.floor(values[handle]); // get the index for the corresponding season, this value = 1 means first season
-    document.getElementById("slider-season").innerHTML = "Season: " + Math.floor(values[handle]); // display which season has been selected
+  	stepSliderValue.innerHTML = Math.floor(values[handle]);
+    // displays selected season
+    document.getElementById("slider-season").innerHTML = "Season: " + Math.floor(values[handle]);
 
     // get the data and update the chart for real
     d3.json("./data/shotchartdata/"+player+"/"+years[stepSliderValue.innerHTML - 1]+".json", function CreateShotChart(error, startdata) {
       if (error) throw error;
-      var tenderData = startdata; // get startdata
+      var tenderData = startdata;
 
       // nesting function to nest close values together
       var coll = d3.nest()
-            .key(function(d) { return [d.x, d.y]; }) // selected keys are x and y value of a shot
-            .rollup(function(v) { return { // returns a dictionary with data of shots of group with close x and y values
+            .key(function(d) { return [d.x, d.y]; })
+            // returns a dictionary with data of shots of group with close x and y values
+            .rollup(function(v) { return {
                 made: d3.sum(v, function(d) {return d.made;}),
                 attempts: d3.sum(v, function(d){return d.attempts;}),
-                shootingPercentage:  d3.sum(v, function(d) {return d.made;})/d3.sum(v, function(d){return d.attempts;}) // shootingpct is made shots / attemps
+                shootingPercentage:  d3.sum(v, function(d) {return d.made;})/d3.sum(v, function(d){return d.attempts;})
             };})
-            .entries(tenderData); // returns a new array that contains the key/value pairs for each index in the array
+             // returns a new array that contains the key/value pairs for each index in the array
+            .entries(tenderData);
 
       // initialise several lists
-      var shotper = [];
       var finalData = [];
       var z = [];
-      coll.forEach(function(a) { // parse the stringified keys
+
+      // parse the stringified keys
+      coll.forEach(function(a) {
           a.key = JSON.parse("[" + a.key + "]");
           z.push(a.values.shootingPercentage);
       });
 
-      meanShot = mean(z); // calculate the mean of the array
-      var shotSTDV = standardDeviation(z); // calculate the standard deviation of the array
+      meanShot = mean(z);
+      var shotSTDV = standardDeviation(z);
 
+      // k is efficiency factor, then create final array
       coll.forEach(function(a){
-              var k = (a.values.shootingPercentage - meanShot)/shotSTDV; // efficiency factor, pct - mean of all shots divided by the std deviation of all shots
-              finalData.push({"x": a.key[0], "y": a.key[1], "z": k, "made": a.values.made, "attempts": a.values.attempts}); // push all data together in new array
+              var k = (a.values.shootingPercentage - meanShot)/shotSTDV;
+              finalData.push({"x": a.key[0], "y": a.key[1], "z": k, "made": a.values.made, "attempts": a.values.attempts});
           });
 
-      var data = finalData; // set data as the final data, needed to update the chart with in html function
-      d3.select(".shot-chart").remove(); // remove the old shot chart
+       // set data as the final data, needed to update the chart with in html function
+      var data = finalData;
+
+       // remove the old shot chart
+      d3.select(".shot-chart").remove();
+
       // eval needed to execute the json string of data in to the code written in <pre> in the HTML, so no evil/misuse here
-      eval(document.getElementById('code').innerHTML); // create chart
+      eval(document.getElementById('code').innerHTML);
+
+      // update the legend with the average percentage
+      document.getElementsByClassName("legend-title")[0].textContent = "Efficiency avg: " + (meanShot * 100).toFixed(2) + "%";
     });
   });
 }
