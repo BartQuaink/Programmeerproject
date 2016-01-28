@@ -13,13 +13,13 @@ Het doel van deze pagina is om daadwerkeljk een conclusie te kunnen trekken of S
 
 ## 3 - Screenshots
 
-![scatterplot](code/doc/scatterplot.jpg)
+![scatterplot](Code/doc/scatterplot.jpg)
 
-![selections](code/doc/selectorhub.jpg)
+![selections](Code/doc/selectorhub.jpg)
 
-![linegraph](code/doc/linegraphnew.jpg)
+![linegraph](Code/doc/linegraphnew.jpg)
 
-![shotchart](code/doc/shotchartnew.jpg)
+![shotchart](Code/doc/shotchartnew.jpg)
 
 ## Made by Bart Quaink - 11121424 - Free Use
 =======
@@ -27,11 +27,11 @@ Het doel van deze pagina is om daadwerkeljk een conclusie te kunnen trekken of S
 
 # 1 - Introductie, features, probleemstelling
 
-Sinds dat Steph Curry terug is gekomen van zijn meerdere blessures zet hij allemaal records binnen de NBA (National Basketball Association). Door velen wordt hij gezien als de nieuwe beste schutter aller tijden. Door zijn statistieken tegen andere legendes zoals Larry Bird, Reggie Miller of Ray Allen uit te zetten kan er pas objectief gekeken worden naar wat voor een goede schutter hij wel niet is. 
+Sinds dat Steph Curry terug is gekomen van zijn meerdere blessures zet hij allemaal records binnen de NBA (National Basketball Association). Door velen wordt hij gezien als de nieuwe beste schutter aller tijden. Door zijn statistieken tegen andere legendes zoals Larry Bird, Reggie Miller of Ray Allen uit te zetten kan er pas objectief gekeken worden naar wat voor een goede schutter hij wel niet is.
 
-Door middel van verschillende manieren van het representeren van data te gebruiken kunnen deze spelers tegen elkaar afgewogen worden. Denk hierbij aan scatterplots met het totaal aantal gemaakte 3FG (3 point field goals) per wedstrijd van een seizoen, linegraphs waarin het totale aantal 3 punters over de loop van een carriëre uitgezet worden of shotcharts van de 3FG% op een gebied op het veld. Door deze uit te zetten in een interactieve visualisatie kunnen deze spelers snel en gemakkelijk vergeleken worden. 
+Door middel van verschillende manieren van het representeren van data te gebruiken kunnen deze spelers tegen elkaar afgewogen worden. Denk hierbij aan scatterplots met het totaal aantal gemaakte 3FG (3 point field goals) per wedstrijd van een seizoen, linegraphs waarin het totale aantal 3 punters over de loop van een carriëre uitgezet worden of shotcharts van de 3FG% op een gebied op het veld. Door deze uit te zetten in een interactieve visualisatie kunnen deze spelers snel en gemakkelijk vergeleken worden.
 
-Het probleem wat dus opgelost gaat worden is een feitelijke conclusie geven aan wie nu precies in zijn looptijd de beste 3-punt schutter is. 
+Het probleem wat dus opgelost gaat worden is een feitelijke conclusie geven aan wie nu precies in zijn looptijd de beste 3-punt schutter is.
 
 Een shotchart, een groen vinkje staat voor een gemaakt schot en een rood kruisje voor een gemiste poging.
 ![shotchart](doc/shotchart.jpg)
