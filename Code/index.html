@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Steph Curry - 3-point shooting legend</title>
+		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
+		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+		<meta name="author" content="imransdesign.com">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:400,700,500" rel="stylesheet" type="text/css"> <!-- Body font -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"> <!-- Navbar font -->
+
+		<!-- Libs and Plugins CSS -->
+		<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="inc/animations/css/animate.min.css">
+		<link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
+		<link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
+
+		<!-- Theme CSS -->
+    <link rel="stylesheet" href="style/css/reset.css">
+		<link rel="stylesheet" href="style/css/style.css">
+		<link rel="stylesheet" href="style/css/mobile.css">
+		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" type="text/css" href="d3/d3.basketball-shot-chart.css">
+
+		<!-- libraries -->
+		<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css">
+		<script src="d3/d3.min.js"></script>
+		<script src="http://cdn.rawgit.com/virajsanghvi/d3-plugins/master/hexbin/hexbin.js"></script>
+    <script src="d3/d3.chart.js"></script>
+    <script src="http://rawgit.com/virajsanghvi/d3.chart.defaults/master/d3.chart.defaults.js"></script>
+    <script src="d3/d3.basketball-shot-chart.js"></script>
+		<script src="js/nouislider.min.js"></script>
+
+		<!-- Skin CSS -->
+	  <!-- <link rel="stylesheet" href="style/css/skin/summer-orange.css"> -->
+    <link rel="stylesheet" href="style/css/skin/night-purple.css">
+		<link rel="stylesheet" href="style/nouislider.min.css">
+		<link rel="stylesheet" href="style/nouislider.pips.css">
+		<link rel="stylesheet" href="style/nouislider.tooltips.css">
+
+	</head>
+
+    <body data-spy="scroll" data-target="#main-navbar">
+      <div class="page-loader"></div>  <!-- Display loading image while page loads -->
+    	<div class="body">
+
+            <!--========== BEGIN HEADER ==========-->
+            <header id="header" class="header-main">
+
+                <!-- Begin Navbar -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+                  <div class="container">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <!-- <a class="navbar-brand page-scroll" href="index.html">Programmeerproject><img src="img/programmeerproject.png" alt="img"</a> -->
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="page-scroll" href="body">Home</a></li>
+                            <li><a class="page-scroll" href="#about-section">Short Bio</a></li>
+                            <li><a class="page-scroll" href="#services-section">Scatterplot</a></li>
+                            <li><a class="page-scroll" href="#portfolio-section">Data</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container -->
+                </nav>
+                <!-- End Navbar -->
+
+            </header>
+            <!-- ========= END HEADER =========-->
+
+      <!-- Begin text carousel intro section -->
+			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/slider-bg.jpg);">
+
+				<div class="container">
+					<div class="caption text-center text-white" data-stellar-ratio="0.7">
+
+						<div id="owl-intro-text" class="owl-carousel">
+							<div class="item">
+								<h1>Stephen Curry</h1>
+								<p>considering being an artisan in the craft of 3 point shooting, Steph has been continually proving he is one of the best to currently play the game. But can he be considered to even be the best shooter of all time?</p>
+                                <div class="extra-space-l"></div>
+								<a class="btn btn-blank" href="https://en.wikipedia.org/wiki/Stephen_Curry" target="_blank" role="button">Wikipedia</a>
+							</div>
+						</div>
+
+					</div> <!-- /.caption -->
+				</div> <!-- /.container -->
+
+			</section>
+			<!-- End text carousel intro section -->
+
+      <!-- Begin about section -->
+			<section id="about-section" class="page bg-style1">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+                            <h2>About Steph Curry</h2>
+                            <div class="devider"></div>
+                            <p class="subtitle">little information</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
+
+                <!-- Begin rotate box-1 -->
+                <div class="rotate-box-1-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <a class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
+                                    <div class="rotate-box-info">
+                                        <h4>Youth</h4>
+                                        <p>Born march 14,1988 to NBA player Dell Curry. As a scrawny kid, even while leading his high school team to three conference titles, he received no offers from major-conference schools. He decided to go to Davidson, a school that had not won an NCAA tournament since 1969.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <a class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0s">
+                                  <div class="rotate-box-info">
+                                      <h4>College</h4>
+                                      <p>Curry proved himself worthy, being the #2 scorer in the Southern Conference with 21.5ppg in his first year. In his second season, he increased this to 25.5 ppg leading Davidson to a 26-6 season, just losing in the conference finals.
+																			In his final year, Davidson again made it into the NCAA tournament, this time losing in the second round, finishing his last season with 28.6ppg.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <a class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0s">
+                                    <div class="rotate-box-info">
+                                      <h4>Rookie</h4>
+                                      <p>Curry was picked 7th overall in the 2007 NBA draft bij the Golden State Warriors. He averaged 17.5 points and 5.9 assists per game in his rookie season. He finished second in the rooky of the year voting and was named to the NBA All-Rookie First Team.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <a class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0s">
+                                    <div class="rotate-box-info">
+                                        <h4>Currently</h4>
+                                        <p>At the end of the 2010/2011 season Curry was out due to torn ligaments and had to get surgery. In the 2011/2012 season he only played 26 out of 82 games due to still recurring injuries.
+																				On the last day of the 2012/2013 season Curry set the record for most 3-pointers made in a single season. He would break his own record each new year since then and is on pace to break it again. They lost in the second round of the series to the Spurs. Next season, they didn't make it past the first round. After hiring a new coach, the warriors, leaded by a legendary MVP season of Curry, won the 2014/2015 playoffs.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </div>
+                <!-- End rotate box-1 -->
+
+                <div class="extra-space-l"></div>
+
+            <!-- Begin Services -->
+            <section id="services-section" class="page text-center">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2>Scatterplot</h2>
+                            <div class="devider"></div>
+                            <p class="subtitle">comparing steph to other 3-point shooting legends</p>
+														<p class="subtitle">click a player to update the graphs below, then click "Show Graphs" to see the graphs!</p>
+														<div class="extra-space-l"></div>
+														<div id="scatterplot" data-wow-delay="0.1s"></div>
+														<script src="js/scatterplot.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
+
+                <!-- Begin roatet box-2 -->
+                <div class="rotate-box-2-wrapper">
+                    <div class="container">
+                        <div class="row">
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+
+                    <div class="container">
+                        <!-- Cta Button -->
+                        <div class="extra-space-l"></div>
+                        <div class="text-center">
+                    		<a class="btn btn-default btn-lg-xl" role="button" onclick="showhide('portfolio-section')">Show Graphs</a>
+                        </div>
+                    </div> <!-- /.container -->
+                </div>
+                <!-- End rotate-box-2 -->
+            </section>
+            <!-- End Services -->
+
+          	<!-- Begin Portfolio Section with Graphs -->
+            <section id="portfolio-section" style="display:none;text-align:center;" class="page bg-style1" data-wow-delay="0.1s">
+            	<div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio">
+                                <!-- Begin page header-->
+                                <div class="page-header-wrapper">
+                                    <div class="container">
+                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.1s">
+                                            <h2>Graphs and visualizations</h2>
+                                            <div class="devider"></div>
+                                            <!-- <p class="subtitle">What we are proud of</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End page header-->
+                                <div class="portfoloi_content_area" >
+                                    <div class="portfolio_menu" id="filters">
+                                        <ul>
+                                            <li><a href="#" onclick="showhide('linegraph')">Total 3FG</a></li>
+                                            <li><a href="#" onclick="showhide('chart')">Shot Chart</a></li>
+																						<li><a href="#" onclick="showhide('efficiency')">Efficiency</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="graphs">
+																			<div id="selectedplayer" style="display:none">none</div>
+																			<div id="selectedplayercode" style="display:none">none</div>
+																			<div class="row" style="display:none;text-align:center;" id="linegraph">
+																					<script src="js/linegraph.js"></script>
+                                      </div>
+																			<div class="row" style="display:none;" id="efficiency"></div>
+																			<div class="row" id="shotchart">
+																				<div id="slider-step" style="display:none"></div>
+																				<div id="slider-step-value" style="display:none"></div>
+																				<div id="slider-season"></div>
+																				<script src="data/shotchartdata/shotchartdata.js"></script>
+  																		</div>
+																			<pre style="display:none" id="code">
+																			  var heatRange = ["#5458A2", "#6689BB", "#FADC97", "#F08460", "#B02B48"];
+																			    d3.select(document.getElementById("chart"))
+																			      .append("svg")
+																			        .chart("BasketballShotChart", {
+																			          width: 800,
+																			          // instead of makes/attempts, use z
+																			          hexagonFillValue: function(d) {  return d.z; },
+																			          // switch heat scale domain to [-2.5, 2.5] to reflect range of z values
+																			          heatScale: d3.scale.quantile()
+																			            .domain([-2.5, 2.5])
+																			            .range(heatRange),
+																			          // update our binning algorithm to properly join z values
+																			          // here, we update the z value to be proportional to the events of each point
+																			          hexagonBin: function (point, bin) {
+																			            var currentZ = bin.z || 0;
+																			            var totalAttempts = bin.attempts || 0;
+																			            var totalZ = currentZ * totalAttempts;
+																			              var attempts = point.attempts || 1;
+																		              bin.attempts = totalAttempts + attempts;
+																		              bin.z = (totalZ + (point.z * attempts))/bin.attempts;
+																		            },
+																								hexagonRadiusThreshold: 2,
+																		          })
+																		            .draw(data);
+																	    </pre>
+																		</div> <!-- end graph section -->
+																		<div id="chart" style="display:none;text-align:center;"></div>
+                                </div> <!-- close portfolio content section -->
+                            </div> <!-- close entire portfolio -->
+                          </div> <!-- close class -->
+                    </div> <!-- close row -->
+              </div> <!-- close container -->
+            </section>
+            <!-- End portfolio -->
+
+	          <!-- Begin partners -->
+            <!-- <section id="partners-section"> -->
+                <!-- Begin page header-->
+                <!-- <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2>Data provided by</h2>
+                            <div class="devider"></div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- End page header-->
+                <!-- <div class="container">
+                    <div id="owl-partners" class="owl-carousel">
+                        <a href="http://espn.go.com/nba/statistics"><img src="img/partners/2.png" alt="img"></a>
+                        <a href="http://stats.nba.com"><img src="img/partners/1.png" alt="img"></a>
+                        <a href="http://basketball-reference.com"><img src="img/partners/3.png" alt="img"></a>
+                    </div>
+                </div>
+            </section> -->
+            <!-- End partners -->
+
+            <!-- Begin footer -->
+            <!-- <footer class="text-off-white">
+                <div class="footer">
+                    <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+                        <p class="copyright">Copyright &copy; 2015 - Designed by Bart Quaink - 11121424 - Webpage style designed By <a href="https://www.behance.net/poljakova" class="theme-author">Veronika Poljakova</a> &amp; Developed by <a href="http://www.imransdesign.com/" class="theme-author">Imransdesign</a></p>
+                    </div>
+								</div>
+            </footer> -->
+            <!-- End footer -->
+
+            <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
+
+        </div><!-- body ends -->
+
+    <!-- Plugins JS -->
+		<script src="inc/jquery/jquery-1.11.1.min.js"></script>
+		<script src="inc/bootstrap/js/bootstrap.min.js"></script>
+		<script src="inc/owl-carousel/js/owl.carousel.min.js"></script>
+		<script src="inc/stellar/js/jquery.stellar.min.js"></script>
+		<script src="inc/animations/js/wow.min.js"></script>
+		<script src="inc/classie.js"></script>
+    <script src="inc/waypoints.min.js"></script>
+		<script src="inc/isotope.pkgd.min.js"></script>
+		<script src="inc/jquery.easing.min.js"></script>
+		<script src="inc/jquery.counterup.min.js"></script>
+		<script src="inc/smoothscroll.js"></script>
+
+		<!-- Theme JS -->
+		<script src="js/theme.js"></script>
+
+		<!-- Onclick events -->
+		<script>
+		// script to show the desired graph and hide the other ones
+		function showhide(id) {
+    	var e = document.getElementById(id);
+    	e.style.display = (e.style.display == "block") ? "none" : "block";
+
+			if(id == "chart"){
+				document.getElementById("linegraph").style.display = "none";
+				document.getElementById("efficiency").style.display = "none";
+				document.getElementById("slider-step").style.display = "";
+				document.getElementById("slider-season").style.display = "";
+			}
+			if(id == "linegraph"){
+				document.getElementById("efficiency").style.display = "none";
+				document.getElementById("chart").style.display = "none";
+				document.getElementById("slider-step").style.display= "none";
+				document.getElementById("slider-season").style.display = "none";
+
+			}
+			if(id == "efficiency"){
+				document.getElementById("linegraph").style.display = "none";
+				document.getElementById("chart").style.display = "none";
+				document.getElementById("slider-step").style.display = "none";
+				document.getElementById("slider-season").style.display = "none";
+			}
+ 		}
+		</script>
+    </body>
+</html>
