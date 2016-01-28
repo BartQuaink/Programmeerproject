@@ -74,7 +74,7 @@ d3.json("./data/new3pointers.json", function(error, data){
           .attr("y", 6)
           .attr("dy", ".71em")
           .style("text-anchor", "end")
-          .text("Total 3FG");
+          .text("Total 3FG Made");
 
   // add the data to the svg
   var playerdata = svg.selectAll(".playerdata")
@@ -140,9 +140,13 @@ d3.json("./data/new3pointers.json", function(error, data){
   var effy = d3.scale.linear()
       .range([height,0]);
 
+  // create formatter for percentage
+  var formatPercent = d3.format(".0%");
+
   var effyAxis = d3.svg.axis()
       .scale(effy)
-      .orient("left");
+      .orient("left")
+      .tickFormat(formatPercent);
 
   // make the efficiency line
   var effline = d3.svg.line()
@@ -188,7 +192,7 @@ d3.json("./data/new3pointers.json", function(error, data){
           .attr("y", 6)
           .attr("dy", ".71em")
           .style("text-anchor", "end")
-          .text("Efficiency");
+          .text("Percentage of 3FG made");
 
   // add data to the svg
   var effplayerdata = effsvg.selectAll(".effplayerdata")
