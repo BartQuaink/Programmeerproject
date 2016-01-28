@@ -12,12 +12,12 @@ Het doel van deze pagina is om daadwerkeljk een conclusie te kunnen trekken of S
 
 ## 3 - Screenshots
 
-![scatterplot](doc/scatterplot.jpg)
+![scatterplot](code/doc/scatterplot.jpg)
 
-![selections](doc/selectorhub.jpg)
+![selections](code/doc/selectorhub.jpg)
 
-![linegraph](doc/linegraphnew.jpg)
+![linegraph](code/doc/linegraphnew.jpg)
 
-![shotchart](doc/shotchartnew.jpg)
+![shotchart](code/doc/shotchartnew.jpg)
 
 ## Made by Bart Quaink - 11121424 - Free Use
