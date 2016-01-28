@@ -20,6 +20,7 @@ Door middel van een onclick functie binnen javascript zal de rest van de pagina 
 * De algemene layout van de pagina zal door middel van bootstrap gecreëerd worden. Het idee is dat de pagina zal laden waarin de scatterplot zichtbaar is, en wanneer en geklikt en gescrollt wordt zal deze pagina verder laden.
 
 * Er zullen verschillende soorten datasets verkregen worden. Ten eerste voor de informatie betrekkende op de 3FG en 3FG% van de speler, deze kan via basketball-reference verkregen worden. De locatie van de schoten van de speler, en of deze raak zijn of mis worden van stats.nba.com gehaald. Beide data zal in een JSON tabel omgezet worden voor gemakkelijk gebruik met javascript.
+<<<<<<< HEAD
 
 # Project - 3 point legend Steph Curry
 
@@ -73,3 +74,5 @@ https://i.imgur.com/MxXTCr4.jpg
 
 En de zeer uitgebreide, prachtige
 http://peterbeshai.com/buckets/app/#/playerView/201935_2015
+=======
+>>>>>>> e9a3ad5860b1e62912ffaa33f6a7d1def2d0658b

@@ -6,6 +6,7 @@
 * worked out the proposal of project idea
 
 # Day 2
+<<<<<<< HEAD
 * Created a python scraper to scrape the NBA stats website.
 
 # Day 3
@@ -14,6 +15,16 @@
 
 # Day 4
 * New python scraper is working, started working on the scraper to also convert the data into the correct JSON format
+=======
+* Created a javascript scraper to scrape the NBA stats website.
+
+# Day 3
+* Javascript scarper is working and data is in correct format, start working on another scraper to scrape espn statistics page.
+* Start working on the d3 shotchart using the data scraped by the scraper of day 2
+
+# Day 4
+* Python scraper is working, started working on the scraper to also convert the data into the correct JSON format
+>>>>>>> e9a3ad5860b1e62912ffaa33f6a7d1def2d0658b
 * scraper and converter is working, all data is finished
 * continue working on the shotchart
 
@@ -51,6 +62,7 @@
 
 # Day 14
 * Continue working on shotchart, x,y is working, z value not yet, continue on calculations for good z value
+<<<<<<< HEAD
 
 # Day 15
 * Calculations complete for z value, started working on implementing the final interaction, done in the weekend
@@ -69,3 +81,5 @@
 
 # Day 20
 * presentations
+=======
+>>>>>>> e9a3ad5860b1e62912ffaa33f6a7d1def2d0658b
