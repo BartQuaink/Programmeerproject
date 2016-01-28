@@ -3,12 +3,9 @@
 import requests
 from lxml import html
 import json
-import csv
 import re
 from pattern.web import URL, DOM, plaintext
 from collections import defaultdict
-
-filterlist = ["1","2","3","4","5","6","7","8","9","0","/","-"]
 
 playerlist = dict()
 
@@ -18,14 +15,14 @@ htmllink = "http://espn.go.com/nba/player/stats/_/id/"
 
 output_file = open('new3pointers.json', 'w')
 
+# get data for all players
 for player in players:
     TARGET_URL = URL(htmllink + player)
     dom = DOM(TARGET_URL.download(cached=True))
     dataofyear = list()
     tempdata= dict()
 
-    print player
-
+    #  loop over the html table
     for e in dom.by_tag("div.mod-container mod-table mod-player-stats"):
         for a in e.by_tag("div.mod-content")[1:2]:
             for tablehead in a.by_class("tablehead"):
@@ -34,12 +31,10 @@ for player in players:
                     madeshots = oddrow[4].content[:3]
                     madeshots = int(madeshots.replace("-", ""))
 
-                    # total3pointers += int(madeshots)
-
                     year += 2
 
                     percentage = float(oddrow[5].content)
-                    # dataofyear["year" + str(year)] = [madeshots, percentage]
+
                     tempdata["year"] = year
                     tempdata["tot3fg"] = madeshots
                     tempdata["percentage"] = percentage
@@ -52,12 +47,10 @@ for player in players:
                     madeshots = evenrow[4].content[:3]
                     madeshots = int(madeshots.replace("-", ""))
 
-                    # total3pointers += int(madeshots)
-
                     year += 2
 
                     percentage = float(evenrow[5].content)
-                    # dataofyear["year" + str(year)] = [madeshots, percentage]
+
                     tempdata["year"] = year
                     tempdata["tot3fg"] = madeshots
                     tempdata["percentage"] = percentage
@@ -65,6 +58,7 @@ for player in players:
                     dataofyear.append(tempdata)
                     tempdata = {}
 
+    # re.sub removes every non alphabetic character
     playerlist[re.sub("[^a-zA-Z]+", "", player)] = dataofyear
     dataofyear = []
 

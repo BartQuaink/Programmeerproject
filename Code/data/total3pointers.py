@@ -1,4 +1,4 @@
-# scrapes the total 3 pointers made for the top 3 point shooters, needed for scatterplot
+# scrapes the total 3 pointers made for the top 3 point shooters, needed for scatterplot, created seperately because different graphs are used
 
 import requests
 from lxml import html
@@ -38,10 +38,6 @@ for player in players:
 
                     year += 2
 
-                    # percentage = float(oddrow[5].content)
-                    # dataofyear[year] = [madeshots, percentage]
-
-
                 year = 0
                 for evenrow in tablehead.by_class("evenrow"):
                     madeshots = evenrow[4].content[:3]
@@ -50,9 +46,6 @@ for player in players:
                     total3pointers += int(madeshots)
 
                     year += 2
-
-                    # percentage = float(evenrow[5].content)
-                    # dataofyear[year] = [madeshots, percentage]
 
                 dataofyear["years"] = year
                 dataofyear["player"] = re.sub("[^a-zA-Z]+", "", player)
