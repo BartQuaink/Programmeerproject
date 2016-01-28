@@ -6,14 +6,14 @@
 * worked out the proposal of project idea
 
 # Day 2
-* Created a javascript scraper to scrape the NBA stats website.
+* Created a python scraper to scrape the NBA stats website.
 
 # Day 3
-* Javascript scarper is working and data is in correct format, start working on another scraper to scrape espn statistics page.
+* Python scarper is working and data is in correct format, start working on another scraper to scrape espn statistics page.
 * Start working on the d3 shotchart using the data scraped by the scraper of day 2
 
 # Day 4
-* Python scraper is working, started working on the scraper to also convert the data into the correct JSON format
+* New python scraper is working, started working on the scraper to also convert the data into the correct JSON format
 * scraper and converter is working, all data is finished
 * continue working on the shotchart
 
