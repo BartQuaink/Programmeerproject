@@ -1,7 +1,8 @@
-<<<<<<< HEAD
 # Shooting Comparisor - Curry
 
 ## 1 - Introductie
+
+Allereerst wil ik iedereen van de mprog staff bedanken voor de geweldige hulp tijdens de complete minor, van een newbie op het gebied van programmeren naar zoveel meer kennis over programmeren nu is voor beiden een accomplishment. Thanks!
 
 Sinds dat Steph Curry terug is gekomen van zijn meerdere blessures verbreekt hij allemaal records binnen de NBA (National Basketball Association). Door velen wordt hij gezien als de nieuwe beste schutter aller tijden. Door zijn statistieken tegen andere legendarische schutters uit te zetten kan er pas objectief gekeken worden naar wat voor een goede schutter hij wel niet is.
 
